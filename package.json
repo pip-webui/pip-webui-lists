@@ -1,0 +1,33 @@
+{
+    "name": "pip-webui-lists",
+    "version": "1.5.0",
+    "author": "Digital Living Software Corp. <www.digitallivingsoftware.com>",
+    "description": "List controls for Pip.WebUI",
+    "contributors": [
+        {
+            "name": "Sergey Seroukhov",
+            "email": "seroukhov@gmail.com"
+        },
+        {
+            "name": "Alexey Dvoikin",
+            "email": "94dvoikin@gmail.com"
+        },
+        {
+            "name": "Mark Zontak",
+            "email": "mark@zontak.me"
+        }
+    ],
+    "keywords": [
+        "pip",
+        "webui",
+        "list",
+        "controls"
+    ],
+    "noAnalyze": true,
+    "license": "MIT",
+    "private": false,
+    "dependencies": {},
+    "devDependencies": {
+        "pip-webui-tasks": "git+https://github.com/pip-webui/pip-webui-tasks.git"
+    }
+}

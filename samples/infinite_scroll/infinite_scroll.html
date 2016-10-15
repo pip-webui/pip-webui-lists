@@ -1,0 +1,11 @@
+<h2>{{ 'DESCRIPTION' | translate }}</h2>
+<p>{{ 'TRY_TO_SCROLL' | translate }}</p>
+<div class="app-infinite-scroll pip-scroll">
+    <div class="item-container" pip-infinite-scroll="generateItems(10)"
+         pip-scroll-container="'.app-infinite-scroll'" pip-scroll-listen-for-event="windowResized"
+         pip-scroll-distance="0.1">
+        <div class="item" ng-class="'bg-' + item.color" ng-repeat="item in items">
+            {{item.name}}
+        </div>
+    </div>
+</div>

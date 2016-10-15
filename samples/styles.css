@@ -1,0 +1,193 @@
+.pip-recommended-header {
+    height: 45px;
+    min-height: 45px;
+    z-index: 10;
+}
+
+.pip-recommended-header .md-toolbar-tools {
+    height: 45px;
+    min-height: 45px;
+}
+
+.pip-recommended-header pip-title {
+    overflow:      hidden;
+    text-overflow: ellipsis;
+    white-space:   nowrap;
+}
+
+.pip-recommended-header .md-button > span {
+    text-transform: none;
+}
+
+.pip-body {
+    padding: 24px !important;
+}
+
+
+/* Styles for Selected */
+
+.app-selected .pip-list-x {
+	background-color: grey;
+	max-height: 200px;
+	overflow-y: scroll;
+}
+
+.app-selected .pip-list-x:focus {
+	background-color: yellow;
+	outline: blue solid 1px;
+}
+
+.app-selected .pip-list-x .pip-list-x-item {
+	position: relative;
+	overflow: hidden;
+}
+
+.app-selected .pip-list-x-item:hover,
+.app-selected .pip-list-x-item.selected {
+	background-color: red;
+}
+
+/* Styles for Infinite Scroll */
+
+.app-infinite-scroll {
+	border: 2px solid red;
+	overflow-y: auto;
+	height: 500px;
+}
+
+.app-infinite-scroll .item-container {
+	width: 680px;
+	margin: 0 auto;
+}
+
+.app-infinite-scroll .item {
+	margin: 10px;
+	display: inline-block;
+	width: 200px;
+	height: 100px;
+	text-align: center;
+	line-height: 100px;
+	vertical-align: middle;
+	border: 2px solid black;
+}
+
+/* Styles for Draggable */
+
+.app-draggable * {
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+.app-draggable [pip-drag] {
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.app-draggable [pip-drag] {
+	width: 100px;
+	height: 100px;
+	background: rgba(255,0,0, 0.5);
+	color:white;
+	text-align: center;
+	paddipip-top:40px;
+	display: inline-block;
+	margin:0 10px;
+	cursor: move;
+}
+
+.app-draggable ul.draggable-objects:after {
+	display: block;
+	content:"";
+	clear:both;
+}
+
+.app-draggable .draggable-objects li {
+	float:left;
+	display: block;
+	width: 120px;
+	height:100px;
+}
+
+.app-draggable [pip-drag].pip-drag-over {
+	border:solid 1px red;
+}
+
+.app-draggable [pip-drag].pip-dragging {
+	opacity: 0.5;
+}
+
+.app-draggable [pip-drop] {
+	background: rgba(0,255,0, 0.5);
+	text-align: center;
+	width: 600px;
+	height: 200px;
+	paddipip-top:90px;
+	display: block;
+	margin:20px auto;
+	position: relative;
+}
+
+.app-draggable [pip-drop].pip-drag-enter {
+	border:solid 5px red;
+}
+
+.app-draggable [pip-drop] span.title {
+	display: block;
+	position: absolute;
+	top:50%;
+	left:50%;
+	width: 200px;
+	height: 20px;
+	margin-left: -100px;
+	margin-top: -10px;
+}
+
+.app-draggable [pip-drop] div {
+	position: relative;
+	z-index: 2;
+}
+
+.drag-scroll-test {
+	overflow: scroll;
+	height: 400px;
+}
+
+.drag-scroll [pip-drag] {
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.drag-scroll [pip-drag] {
+	cursor: move;
+}
+
+.drag-scroll [pip-drag].drag-over {
+	border: solid 1px red;
+}
+
+.drag-scroll [pip-drag].dragging {
+	opacity: 0.5;
+}
+
+.drag-scroll [pip-drop] {
+	position: relative;
+}
+
+.drag-scroll [pip-drop].drag-enter {
+	border: solid 5px red;
+}
+
+.drag-scroll [pip-drop] p {
+
+}
+
+.drag-scroll [pip-drop] div {
+	/*position: relative;*/
+	z-index: 2;
+}
+

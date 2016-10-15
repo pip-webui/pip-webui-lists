@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html class="no-scroll">
+<head lang="en">
+    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <title>List Controls</title>
+
+    <link rel="stylesheet" href="../../lib/pip-webui-lib.css"/>
+    <link rel="stylesheet" href="../../lib/pip-webui-css.css"/>
+    <link rel="stylesheet" href="../../dist/pip-webui-core.css"/>
+    <link rel="stylesheet" href="styles.css"/>
+
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="https://www.google.com/jsapi"></script>
+    <script src="../../lib/pip-webui-lib.js"></script>
+    <script src="../../dist/pip-webui-core.js"></script>
+
+    <script src="index.js"></script>
+    <script src="draggable/draggable.js"></script>
+    <script src="draggable/draggable_input.js"></script>
+    <script src="selected/selected.js"></script>
+    <script src="focused/focused.js"></script>
+    <script src="infinite_scroll/infinite_scroll.js"></script>
+</head>
+
+<body ng-app="appBasicBehaviors" ng-controller="AppController" md-theme="{{ $theme || 'blue' }}" class="{{ $theme }} pip-main layout-column">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="menu" 
+                ng-click="onToggleMenu()" hide-gt-sm>
+                <md-icon md-svg-icon="icons:menu"></md-icon>
+            </md-button>
+            <div class="flex-var text-overflow">Basic Behaviors</div>
+            <div class="flex-fixed">
+                <md-menu md-position-mode="target-right target">
+                <span
+                        ng-click="$mdOpenMenu()"
+                        aria-label="theme selection">
+                    {{ $theme | translate}}
+                    <md-icon md-svg-icon="icons:triangle-down"></md-icon>
+                </span>
+                    <md-menu-content width="3">
+                        <md-menu-item ng-repeat="theme in themes">
+                            <md-button ng-click="onThemeClick(theme)">{{theme | translate}}</md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <md-menu md-position-mode="target-right target">
+                <span ng-click="$mdOpenMenu()"
+                      aria-label="language selection">
+                    {{ $language | translate}}
+                    <md-icon md-svg-icon="icons:triangle-down"></md-icon>
+                </span>
+                    <md-menu-content width="3">
+                        <md-menu-item ng-repeat="lang in languages">
+                            <md-button ng-click="onLanguageClick(lang)">{{lang | translate}}</md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </div>
+        </div>
+    </md-toolbar>
+        
+    <div class="layout-row flex">
+        <md-sidenav md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')"
+                    class="md-whiteframe-z2 md-sidenav-left layout-column">
+            <md-list>
+                <md-list-item ng-repeat="contentItem in content" 
+                    ng-click="onSwitchPage(contentItem.state)"
+                    ng-class="{ 'selected-state': isActiveState(contentItem.state) }">
+                    <p ui-sref="{{contentItem.state}}">{{contentItem.title}}</p>
+                </md-list-item>
+            </md-list>
+        </md-sidenav>
+        
+        <md-content id="content" class="p24-flex flex">
+            <div ui-view></div>            
+        </md-content>
+    </div>
+</body>
+</html>
