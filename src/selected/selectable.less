@@ -1,0 +1,154 @@
+// @file CSS styles for selected list items
+// @copyright Digital Living Software Corp. 2014-2015
+
+md-list-item {
+  &.pip-selectable {
+    button {
+      border-left: none!important;
+      padding-left: 21px!important;
+    }
+
+    &.selected {
+      button {
+        padding-left: 16px!important;
+        background-color: rgba(158,158,158,.2);
+        border-left: 5px solid rgba(33, 150, 243, 0.5) !important;
+      }
+    }
+  }
+  
+  &.pip-selectable-tree {
+    button {
+      border-left: none!important;
+    }
+
+    &.selected {
+      & > button {
+        background-color: rgba(158, 158, 158, .2);
+        border-left: 5px solid rgb(3, 169, 244) !important; //#2196f3;
+      }
+    }
+  }
+
+  &.pip-selectable-tree > button {
+    padding-right: 0;
+  }
+
+  &.pip-selectable.pip-simple-list-item {
+      border-left: none!important;
+      padding-left: 21px!important;
+
+    &.selected {
+        padding-left: 16px!important;
+        background-color: rgba(158,158,158,.2);
+        border-left: 5px solid rgba(33, 150, 243, 0.5) !important;
+
+    }
+  }
+
+  &.pip-selectable.pip-ref-list-item {
+      border-left: none!important;
+      padding-left: 21px!important;
+
+    &.selected {
+        padding-left: 16px!important;
+        background-color: rgba(158,158,158,.2);
+        border-left: 5px solid rgba(33, 150, 243, 0.5) !important;
+
+    }
+  }  
+}
+
+md-list-item.pip-list-no-click {
+
+  &.pip-selectable {
+
+    .md-no-style{
+      border-left: none!important;
+      padding-left: 21px!important;
+    }
+
+    &.selected .md-no-style {
+      padding-left: 16px!important;
+      background-color: rgba(158,158,158,.2);
+      border-left: 5px solid rgba(33, 150, 243, 0.5) !important;
+
+    }
+  }
+
+}
+
+
+.generate-selected (@name, @color) {
+  .@{name} {
+  md-list-item {
+    &.pip-selectable {
+
+      &.selected {
+        .md-no-style {
+          background-color: rgba(158,158,158,.2) !important;
+          border-left: 5px solid @color !important;
+        }
+      }
+    }
+
+    &.pip-selectable-tree {
+      &.selected {
+        & > .md-no-style {
+          background-color: rgba(158, 158, 158, .2);
+          border-left: 5px solid @color !important; //#2196f3;
+        }
+      }
+    }
+
+    &.pip-ref-list-item {
+      &.selected {
+        & > .md-no-style {
+          & > button {
+            border-left: none!important;
+          }
+        }
+      }
+    }
+
+    &.pip-ref-list {
+      &.selected {
+        & > .md-no-style {
+          & > button {
+            border-left: none!important;
+          }
+        }
+      }
+    }
+
+    &.pip-selectable.pip-simple-list-item {
+      &.selected {
+        background-color: rgba(158,158,158,.2);
+        border-left: 5px solid @color !important;
+
+      }
+    }
+
+    &.pip-selectable.pip-ref-list-item {
+      &.selected {
+          border-left: 5px solid @color !important;
+      }
+    }      
+
+  }
+  }
+}
+
+.generate-selected(blue,                @color-blue-hue);
+.generate-selected(pink,                @color-pink-hue);
+.generate-selected(orange,              @color-orange-hue);
+.generate-selected(amber,               @color-amber-hue);
+.generate-selected(green,               @color-green-hue);
+.generate-selected(navy,                @color-navy-hue);
+.generate-selected(grey,                @color-grey-hue);
+.generate-selected(dark,                @color-dark-hue);
+.generate-selected(black,               @color-black-hue);
+
+.generate-selected(bootbarn-warm,       @color-bootbarn-warm-hue);
+.generate-selected(bootbarn-cool,       rgba(69,90, 100,.54));
+.generate-selected(bootbarn-monochrome, rgba(38,50,56,.54));

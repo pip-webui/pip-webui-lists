@@ -1,0 +1,13 @@
+<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{'bg-' + pipType + '-chips'}}"
+     ng-if="pipType && !pipTypeLocal">
+
+    <span>{{pipType.toUpperCase() | translate | uppercase}}</span>
+</div>
+<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{'bg-' + pipType + '-chips'}}"
+     ng-if="pipType && pipTypeLocal">
+
+    <span>{{pipTypeLocal.toUpperCase() | translate | uppercase}}</span>
+</div>
+<div class="pip-chip rm4" ng-repeat="tag in pipTags">
+    <span>{{::tag}}</span>
+</div>

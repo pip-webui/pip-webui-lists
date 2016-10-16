@@ -4,12 +4,55 @@
 
 Pip.WebUI.Lists module contains controls to visualize and manipulate with lists
 
-* List styles
-* Drag & drop
-* Infinite scroll
-* List selections
+**Tags** control visializes a list of read-only chips (tags)
 
-And more... Please, look at [User's guide](https://github.com/pip-webui/pip-webui-lists/blob/master/doc/UsersGuide.md) for details.
+<a href="https://github.com/pip-webui/pip-webui-controls/raw/master/doc/images/img-tags.png" style="border: 3px ridge #c8d2df; display: inline-block">
+    <img src="https://github.com/pip-webui/pip-webui-controls/raw/master/doc/images/img-tags.png"/>
+</a>
+
+See online samples [here...](http://webui.pipdevs.com/pip-webui-controls/index.html#/tags)
+
+**Reference item** represents a reference with title, details and avatar.
+
+<a href="https://github.com/pip-webui/pip-webui-csscomponents/raw/master/doc/images/img-ref-item.png" style="border: 3px ridge #c8d2df; margin: auto; display: inline-block">
+    <img src="https://github.com/pip-webui/pip-webui-csscomponents/raw/master/doc/images/img-ref-item.png"/>
+</a>
+
+**Reference list** is a list filled with **Reference items**.
+
+<a href="https://github.com/pip-webui/pip-webui-csscomponents/raw/master/doc/images/img-ref-list.png" style="border: 3px ridge #c8d2df; margin: auto; display: inline-block">
+    <img src="https://github.com/pip-webui/pip-webui-csscomponents/raw/master/doc/images/img-ref-list.png"/>
+</a>
+
+**Simple list** supports hover effects and select marks for the list items.
+
+<a href="https://github.com/pip-webui/pip-webui-csscomponents/raw/master/doc/images/img-simple-list.png" style="border: 3px ridge #c8d2df; margin: auto; display: inline-block">
+    <img src="https://github.com/pip-webui/pip-webui-csscomponents/raw/master/doc/images/img-simple-list.png"/>
+</a>
+
+**Check list** is a list with clickable items and a checkbox as the primary action
+
+<a href="https://github.com/pip-webui/pip-webui-csscomponents/raw/master/doc/images/img-check-list.png" style="border: 3px ridge #c8d2df; margin: auto; display: inline-block">
+    <img src="https://github.com/pip-webui/pip-webui-csscomponents/raw/master/doc/images/img-checklist.png"/>
+</a>
+
+**Chips** shows a list with read-only chips. It also has special styles for chips that stick to left or right edge.
+
+<a href="https://github.com/pip-webui/pip-webui-csscomponents/raw/master/doc/images/img-tags.png" style="border: 3px ridge #c8d2df; margin: auto; display: inline-block">
+    <img src="https://github.com/pip-webui/pip-webui-csscomponents/raw/master/doc/images/img-tags.png"/>
+</a>
+
+**Dividers** to separate content in different places
+
+<a href="https://github.com/pip-webui/pip-webui-csscomponents/raw/master/doc/images/img-dividers.png" style="border: 3px ridge #c8d2df; margin: auto; display: inline-block">
+    <img src="https://github.com/pip-webui/pip-webui-csscomponents/raw/master/doc/images/img-dividers.png"/>
+</a>
+
+**Table** is a temporary table component based on Bootstrap code. It will be removed when Angular-Material team release a normal table
+
+<a href="https://github.com/pip-webui/pip-webui-csscomponents/raw/master/doc/images/img-table.png" style="border: 3px ridge #c8d2df; margin: auto; display: inline-block">
+    <img src="https://github.com/pip-webui/pip-webui-csscomponents/raw/master/doc/images/img-table.png"/>
+</a>
 
 
 ## Learn more about the module

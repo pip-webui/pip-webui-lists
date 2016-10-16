@@ -1,0 +1,36 @@
+<p class="text-title h72 m0 bm8 layout-row layout-align-start-center">
+    Chips
+</p>
+<p> Tag for displaying type. Used in lists. </p>
+<p> Example of using this component in list, link:
+    <a href="index.html#/ref_list">Reference list </a>
+</p>
+
+<img src="http://i.imgur.com/lAkgOwM.png" style="width: 400px">
+
+<div class="layout-row layout-align-end-center" style="width: 100px">
+    <md-chip class="pip-type-chip pip-type-chip-right">
+        <div class="pip-text">INFO</div>
+    </md-chip>
+</div>
+
+<div class="layout-row layout-align-end-center" style="width: 100px">
+    <md-chip class="pip-type-chip pip-type-little-chip pip-type-chip-right">
+        <div class="pip-text">OBJECTIVE</div>
+    </md-chip>
+</div>
+
+<div>
+    <div class="pip-chip rm4" ng-repeat="tag in tags">
+        <div class="pip-text">{{::tag}}</div>
+    </div>
+</div>
+
+<div>
+    <div class="pip-type-chip pip-type-chip-left">
+        <span>{{pipTypeLocal | uppercase}}</span>
+    </div>
+    <div class="pip-chip" ng-repeat="tag in tags">
+        <span>{{::tag}}</span>
+    </div>
+</div>

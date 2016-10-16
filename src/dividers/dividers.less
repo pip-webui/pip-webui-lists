@@ -1,0 +1,41 @@
+// @file CSS styles for dividers
+// @copyright Digital Living Software Corp. 2014-2015
+
+@divider-border: 1px solid rgba(0, 0, 0, 0.12);
+
+.pip-divider-right {
+  border-right: @divider-border !important;
+}
+
+.pip-divider {
+  border-top: @divider-border;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+.pip-tile-divider {
+  border-top: @divider-border;
+  margin: 8px -25px;
+
+  @media (max-width: 1200px) {
+    margin: 8px -17px;
+  }
+}
+
+.pip-list-divider {
+  border-top: @divider-border;
+  margin: 8px -24px;
+
+  @media (max-width: 1200px) {
+    margin: 8px -16px;
+  }
+}
+
+.dark, .black {
+  .pip-divider, .pip-list-divider, .pip-tile-divider {
+    border-top-color: @color-divider-dark !important;
+  }
+  .pip-divider-right {
+    border-right-color: @color-divider-dark !important;
+  }
+}

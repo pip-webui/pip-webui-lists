@@ -1,0 +1,102 @@
+// @file Chip controls styles
+// @copyright Digital Living Software Corp. 2014-2015
+
+.pip-chip,
+.pip-type-chip {
+  @font-size-chips: 14px;
+  @font-size-little-chips: 10px;
+  @font-weight-chips: 500;
+  @letter-spacing-chips: .01em;
+  @line-height-chips: 24px;
+  @font-chips: normal @font-weight-chips @font-size-chips @font-family;
+
+  font: @font-chips;
+  display: inline-block;
+  padding: 0 12px 0 12px !important;
+  margin: 4px 4px 0 0 !important;
+  overflow: hidden !important;
+
+  box-shadow: none !important;
+  line-height: 20px !important;
+  vertical-align: middle !important;
+
+  height: 32px !important;
+  border-radius: 16px;
+  background: rgb(224, 224, 224);
+  color: rgb(66, 66, 66);
+  padding-right: 16px;
+
+  &.pip-type-little-chip {
+    height: 24px !important;
+    padding-left: 17px !important;
+    & > span,
+    .pip-text {
+      margin: 3px 0 0 0;
+      font-size: @font-size-little-chips !important;
+      margin-right: 0 !important;
+    }
+  }
+
+  .pip-avatar,
+  .pip-pic {
+    display: block;
+    float: left;
+    margin-left: -12px;
+    vertical-align: middle;
+    height: 32px !important;
+    width: 32px !important;
+    border-radius: 50%;
+    margin-right: 8px !important;
+  }
+
+  .pip-avatar md-icon,
+  .pip-pic {
+    width: 32px;
+    height: 32px;
+  }
+
+  & > span,
+  .pip-text {
+    display: inline-block;
+    max-width: 150px;
+    vertical-align: middle;
+    .text-overflow();
+    font-size: 13px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+
+    text-transform: none;
+  }
+}
+
+.pip-type-chip {
+  cursor: default;
+  border-radius: 16px;
+  display: block;
+  height: 32px;
+  line-height: 32px;
+  margin: 8px 8px 0 0;
+  padding: 0 8px 0 12px;
+  float: left;
+
+  margin-left: -25px !important;
+  margin-right: 4px;
+  padding-left: 25px !important;
+  padding-right: 16px !important;
+
+  @media (max-width: 1200px) {
+    margin-left: -17px !important;
+    padding-left: 17px !important;
+  }
+}
+
+.pip-type-chip-left {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.pip-type-chip-right {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-right: 0 !important;
+}

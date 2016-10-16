@@ -1,0 +1,20 @@
+// @file CSS styles for simple list items
+// @copyright Digital Living Software Corp. 2014-2015
+
+.pip-simple-list {
+  .pip-simple-list-item {
+    height: 48px;
+    -webkit-user-select: auto;
+    line-height: 48px;
+    vertical-align: middle;
+    font: @font-subhead2;
+    border-bottom: @divider-border;
+    cursor: pointer;
+    .text-overflow();
+    max-width: 100%;
+    
+    .pip-title {
+      .text-overflow();
+    }
+  }
+}
