@@ -1,0 +1,38 @@
+<p class="text-title h72 m0 bm8 layout-row layout-align-start-center">
+    Check list
+</p>
+
+<p class="text-subhead2 h48 m0 bm8 layout-row layout-align-start-center">
+    Example
+</p>
+
+<img src="http://i.imgur.com/onLXoI7.png" class="pip-sample-pic">
+
+<md-list class="pip-menu pip-check-list">
+
+    <md-list-item class="pip-check-list-item" md-ink-ripple ng-click="aaa()" ng-repeat="item in items">
+        <div class="pip-item-content layout-row layout-align-start-start">
+            <md-checkbox class="pip-checkbox"></md-checkbox>
+
+            <div class="pip-content divider-bottom">
+                <p class="pip-title">{{item.title}} </p>
+                <p class="pip-text-bold">{{item.parent}}</p>
+                <p class="pip-text">{{item.text}}</p>
+            </div>
+        </div>
+
+    </md-list-item>
+    <md-list-item class="pip-check-list-item" md-ink-ripple ng-click="aaa()" ng-repeat="item in items">
+        <div class="pip-item-content layout-row layout-align-start-start">
+            <md-icon md-svg-icon="icons:help" class="pip-icon"></md-icon>
+
+            <div class="pip-content divider-bottom">
+                <p class="pip-title">{{item.title}} </p>
+                <p class="pip-text-bold">{{item.parent}}</p>
+                <p class="pip-text">{{item.text}}</p>
+            </div>
+        </div>
+
+    </md-list-item>
+
+</md-list>

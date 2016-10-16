@@ -5,6 +5,7 @@
 
     var content = [
         { title: 'Reference list', state: 'ref_list', url: '/ref_list', controller: 'RefListController', templateUrl: 'ref_list/ref_list.html' },
+        { title: 'Check list', state: 'check_list', url: '/check_list', controller: 'CheckListController', templateUrl: 'check_list/check_list.html' },
         { title: 'Action list', state: 'action_list', url: '/action_list', controller: 'ActionListController', templateUrl: 'action_list/action_list.html' },
         { title: 'Draggable', state: 'draggable', url: '/draggable', controller: 'DraggableController', templateUrl: 'draggable/draggable.html' },
         { title: 'Draggable Input', state: 'draggable_input', url: '/draggable_input', controller: 'DraggableInputController', templateUrl: 'draggable/draggable_input.html' },
@@ -23,7 +24,7 @@
 			//'appBasicBehaviors.FabTooltipVisibility', 'appBasicBehaviors.UnsavedChanges',
             'appBasicBehaviors.Draggable', 'appBasicBehaviors.Focused',
             'appBasicBehaviors.Selected', 'appBasicBehaviors.InfiniteScroll', 'appBasicBehaviors.DraggableInput',
-            'appBasicBehaviors.RefList', 'appBasicBehaviors.ActionList'
+            'appBasicBehaviors.RefList', 'appBasicBehaviors.ActionList', 'appBasicBehaviors.CheckList'
         ]
     );
 
