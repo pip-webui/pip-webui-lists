@@ -1,5 +1,5 @@
 {
-    "name": "pip-webui-core",
+    "name": "pip-webui-services",
     "version": "1.5.0",
     "description": "Non-visual core services for Pip.WebUI",
     "main": "",
@@ -24,7 +24,7 @@
         "services",
         "filters"
     ],
-    "homepage": "https://github.com/pip-webui/pip-webui-core",
+    "homepage": "https://github.com/pip-webui/pip-webui-services",
     "ignore": [
         ".gitignore",
         "node_modules",

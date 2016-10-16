@@ -18,7 +18,7 @@
             // 3rd Party Modules
             'ui.router', 'ui.utils', 'ngResource', 'ngAria', 'ngCookies', 'ngSanitize', 'ngMessages',
             'ngMaterial', 'wu.masonry', 'LocalStorageModule', 'angularFileUpload', 'ngAnimate', 
-			'pipCore', 'appBasicBehaviors.FabTooltipVisibility',
+			'pipServices', 'appBasicBehaviors.FabTooltipVisibility',
             'appBasicBehaviors.Draggable', 'appBasicBehaviors.Focused', 'appBasicBehaviors.UnsavedChanges',
             'appBasicBehaviors.Selected', 'appBasicBehaviors.InfiniteScroll', 'appBasicBehaviors.DraggableInput'
         ]
