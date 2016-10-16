@@ -1,0 +1,88 @@
+// @file Composition of control styles
+// @copyright Digital Living Software Corp. 2014-2015
+
+.pip-check-list {
+  overflow-x: hidden;
+  .pip-check-list-item {
+
+    min-height: 72px;
+    padding-right: 0px;
+
+
+    .md-list-item-inner {
+      padding-left: 0px;
+      content: none;
+      //border-left: 5px solid @color-content;
+      padding-right: 0px;
+      display: block;
+      width: ~"calc(100% - 21px)";
+
+      .md-ripple-container {
+        display: none;
+        width: 0;
+        height: 0;
+      }
+    }
+
+    .pip-checkbox, .pip-icon  {
+      .flex-fixed();
+      width: 24px;
+      margin-left: 3px;
+      margin-right: 29px;
+      margin-top: 18px;
+      height: 24px !important;
+    }
+
+    .pip-icon {
+
+      margin-top: 16px;
+    }
+
+
+    .pip-content {
+      .text-overflow();
+      .flex-var();
+      padding-right: 24px;
+      padding-top: 8px;
+      padding-bottom: 13px;
+      min-height: 48px;
+
+      .pip-title, .pip-text, .pip-text-bold {
+        margin: 0;
+        -webkit-user-select: auto;
+      }
+
+      .pip-title {
+        .text-overflow();
+        .flex-var();
+        font: @font-subhead2;
+      }
+
+      .pip-text-bold {
+        .flex-var();
+        font: @font-body2;
+        margin: 2px 0;
+        .text-overflow();
+      }
+
+      .pip-text {
+        font: @font-body1;
+        max-height: 1.5em;
+        line-height: 1.5em;
+        margin-right: 16px;
+        color: @color-secondary;
+        .text-overflow();
+      }
+    }
+
+    .pip-item-content {
+      padding-top: 8px;
+      width: 100%;
+    }
+  }
+
+}
+
+md-list-item.pip-check-list-item .md-list-item-inner::before, md-list-item.pip-check-list-item::before {
+    content: none!important;
+}

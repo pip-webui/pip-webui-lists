@@ -1,0 +1,120 @@
+<p class="text-title h72 m0 bm8 layout-row layout-align-start-center">
+    Reference lists
+</p>
+
+<p>
+    Reference list used in most places, for instance in messages and notes
+</p>
+
+<p class="text-subhead2 h48 m0 bm8 layout-row layout-align-start-center">
+    Example
+</p>
+
+<img src="http://i.imgur.com/pXyyVPE.png" style="width: 400px">
+
+
+<md-list class="pip-menu pip-ref-list">
+
+    <md-list-item class="pip-ref-list-item lp16 layout-row layout-align-start-start" md-ink-ripple>
+
+        <img src="images/ES_Timeline.svg" class="pip-pic">
+
+        <div class="pip-content">
+            <div class="layout-row layout-align-space-between-start">
+                <div class="flex">
+                    <p class="pip-title">{{item.title}} </p>
+
+                    <span class="pip-subtitle">
+                        {{item.time}}
+                    </span>
+                </div>
+
+                <md-chip class="pip-type-chip pip-type-chip-right md-chip">
+                    <div class="pip-text">INFO</div>
+                </md-chip>
+            </div>
+
+            <p class="pip-text-bold" ng-if="item.parent">{{item.parent}}</p>
+
+            <p class="pip-text" ng-if="item.parent">{{item.text}}</p>
+
+            <p class="pip-text-lg" ng-if="!item.parent">{{item.text}}</p>
+
+        </div>
+    </md-list-item>
+
+    <md-list-item class="pip-ref-list-item lp16 layout-row layout-align-start-start" md-ink-ripple>
+
+        <img src="images/ES_Timeline.svg" class="pip-pic">
+
+        <div class="pip-content">
+            <div class="layout-row layout-align-space-between-start">
+                <div class="rm8 line-height-string flex">
+                    <p class="pip-title">{{item.title}} </p>
+
+                    <span class="pip-subtitle">
+                        {{item.time}}
+                    </span>
+                </div>
+
+
+            </div>
+
+            <p class="pip-text-bold" ng-if="item.parent">{{item.parent}}</p>
+
+            <p class="pip-text" ng-if="item.parent">{{item.text}}</p>
+
+            <p class="pip-text-lg" ng-if="!item.parent">{{item.text}}</p>
+
+        </div>
+    </md-list-item>
+
+    <md-list-item class="pip-ref-list-item lp16 layout-row layout-align-start-start" md-ink-ripple>
+
+        <img src="images/ES_Timeline.svg" class="pip-pic">
+
+        <div class="pip-content">
+            <p class="pip-title">{{item2.title}} </p>
+
+            <span class="pip-subtitle">{{item2.time}}</span>
+
+            <p class="pip-text-bold" ng-if="item2.parent">{{item2.parent}}</p>
+
+            <p class="pip-text" ng-if="item2.parent">{{item2.text}}</p>
+
+            <p class="pip-text-lg" ng-if="!item2.parent">{{item2.text}}</p>
+
+        </div>
+    </md-list-item>
+
+    <md-list-item class="pip-ref-list-item lp16 layout-row layout-align-start-start" md-ink-ripple>
+        <div class="pip-content">
+            <p class="pip-title">{{item2.title}} </p>
+
+            <span class="pip-subtitle">{{item2.time}}</span>
+
+            <p class="pip-text-bold" ng-if="item2.parent">{{item2.parent}}</p>
+
+            <p class="pip-text" ng-if="item2.parent">{{item2.text}}</p>
+
+            <p class="pip-text-lg" ng-if="!item2.parent">{{item2.text}}</p>
+
+        </div>
+    </md-list-item>
+
+    <md-list-item class="pip-ref-list-item lp16 layout-row layout-align-start-start" md-ink-ripple>
+        <div class="pip-content">
+            <p class="pip-title">{{item3.title}} </p>
+
+            <span class="pip-subtitle">{{item3.time}}</span>
+
+            <p class="pip-text-bold" ng-if="item3.parent">{{item3.parent}}</p>
+
+            <p class="pip-text" ng-if="item3.parent">{{item3.text}}</p>
+
+            <p class="pip-text-lg" ng-if="!item3.parent">{{item3.text}}</p>
+
+        </div>
+    </md-list-item>
+
+</md-list>

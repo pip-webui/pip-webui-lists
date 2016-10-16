@@ -5,7 +5,7 @@
 
     var thisModule = angular.module('appBasicBehaviors.InfiniteScroll', []);
 
-    thisModule.config(function(pipTranslateProvider) {
+  /*  thisModule.config(function(pipTranslateProvider) {
 
         pipTranslateProvider.translations('en', {
             DESCRIPTION: 'Block with red border is scroll container for infinite-scroll control',
@@ -15,7 +15,7 @@
             DESCRIPTION: 'Блок с красной границей является скроллируемым блоком для infinite-scroll контрола',
             TRY_TO_SCROLL: 'Попробуйте проскроллить. Вы увидите добавление элементов.'
         });
-    });
+    });*/
 
     thisModule.controller('InfiniteScrollController',
         function($scope) {
