@@ -1,0 +1,101 @@
+
+@font-family:               Roboto, 'Helvetica Neue', sans-serif;
+
+@font-size-subhead2:               16px;
+@font-weight-subhead2:             500;
+@letter-spacing-subhead2:          .01em;
+@line-height-subhead2:             24px;
+@font-subhead2:                    normal @font-weight-subhead2 @font-size-subhead2 @font-family;
+
+@font-size-body1:                 14px;
+@font-weight-body1:               400;
+@letter-spacing-body1:            .01em;
+@line-height-body1:               20px;
+@font-body1:                      normal @font-weight-body1 @font-size-body1 @font-family;
+
+@font-size-body2:                 14px;
+@font-weight-body2:               500;
+@letter-spacing-body2:            .01em;
+@line-height-body2:               24px;
+@font-body2:                      normal @font-weight-body2 @font-size-body2 @font-family;
+
+
+@color-primary:                   rgba(0, 0, 0, 0.87);
+@color-secondary:                 rgba(0, 0, 0, 0.54);
+
+@color-blue-hue:              rgba(33, 150, 243, .54);
+@color-pink-hue:              rgba(188, 86, 121, .54);
+@color-orange-hue:            rgba(255, 112, 67, .54);
+@color-amber-hue:             rgba(255, 152, 0, .54);
+@color-green-hue:             rgba(76, 175, 80, .54);
+@color-navy-hue:              rgba(86, 97, 125, .54);
+@color-grey-hue:              rgba(96, 125, 139, .54);
+@color-dark-hue:              rgba(33, 33, 33, .54);
+@color-black-hue:             rgba(33, 33, 33, .54);
+
+@color-bootbarn-warm-hue:                       rgba(177, 55, 34, .54);
+@color-bootbarn-cool-hue:                       rgba(69, 90, 100, .54);
+@color-bootbarn-monochrome-hue:                 rgba(38, 50, 56, .54);
+
+
+.flex() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-element(@grow, @shrink, @initialSize: auto) {
+  -webkit-box-flex: @grow @shrink @initialSize;
+  -moz-box-flex: @grow @shrink @initialSize;
+  -webkit-flex: @grow @shrink @initialSize;
+  -ms-flex: @grow @shrink @initialSize;
+  flex: @grow @shrink @initialSize;
+}
+
+.flex-fixed() {
+  .flex-element(0, 0, auto);
+}
+
+.flex-var() {
+  .flex-element(1, 1, auto);
+}
+
+.flex-direction(@direction) {
+  -webkit-box-flex-direction: @direction;
+  -moz-box-flex-direction:    @direction;
+  -webkit-flex-direction:     @direction;
+  -ms-flex-direction:         @direction;
+  flex-direction:             @direction;
+}
+
+.flex-direction-column() {
+  .flex-direction(column);
+}
+
+.flex-direction-row() {
+  .flex-direction(row);
+}
+
+.text-overflow() {
+  overflow:      hidden;
+  text-overflow: ellipsis;
+  white-space:   nowrap;
+}
+
+.flex-vertical-center() {
+  -webkit-box-align:   center;
+  -moz-box-align:      center;
+  -webkit-align-items: center;
+  -ms-flex-align:      center;
+  align-items:         center;
+}
+
+.flex-horizontal-start() {
+  -webkit-box-pack:        start;
+  -moz-box-pack:           start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack:           start;
+  justify-content:         flex-start;
+}
