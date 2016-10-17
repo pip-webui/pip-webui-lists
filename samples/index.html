@@ -40,38 +40,7 @@
 <body ng-app="appLists" ng-controller="AppController" md-theme="{{ $theme || 'blue' }}" class="{{ $theme }} pip-main layout-column">
     <md-toolbar>
         <div class="md-toolbar-tools">
-            <md-button class="md-icon-button" aria-label="menu" 
-                ng-click="onToggleMenu()" hide-gt-sm>
-                <md-icon md-svg-icon="icons:menu"></md-icon>
-            </md-button>
-            <div class="flex-var text-overflow">Basic Behaviors</div>
-            <div class="flex-fixed">
-                <md-menu md-position-mode="target-right target">
-                <span
-                        ng-click="$mdOpenMenu()"
-                        aria-label="theme selection">
-                    {{ $theme}}
-                    <md-icon md-svg-icon="icons:triangle-down"></md-icon>
-                </span>
-                    <md-menu-content width="3">
-                        <md-menu-item ng-repeat="theme in themes">
-                            <md-button ng-click="onThemeClick(theme)">theme</md-button>
-                        </md-menu-item>
-                    </md-menu-content>
-                </md-menu>
-                <md-menu md-position-mode="target-right target">
-                <span ng-click="$mdOpenMenu()"
-                      aria-label="language selection">
-                    {{ $language}}
-                    <md-icon md-svg-icon="icons:triangle-down"></md-icon>
-                </span>
-                    <md-menu-content width="3">
-                        <md-menu-item ng-repeat="lang in languages">
-                            <md-button ng-click="onLanguageClick(lang)">{{lang}}</md-button>
-                        </md-menu-item>
-                    </md-menu-content>
-                </md-menu>
-            </div>
+            <div class="flex-var text-overflow">Lists</div>
         </div>
     </md-toolbar>
         
