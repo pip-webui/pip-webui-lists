@@ -3,7 +3,7 @@
 (function () {
     'use strict';
 
-    var thisModule = angular.module('appBasicBehaviors.CheckList', []);
+    var thisModule = angular.module('appLists.CheckList', []);
 
     thisModule.controller('CheckListController',
         function($scope) {

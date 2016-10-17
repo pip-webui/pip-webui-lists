@@ -3,7 +3,7 @@
 (function () {
     'use strict';
 
-    var thisModule = angular.module('appComponentsStyles.Dividers', []);
+    var thisModule = angular.module('appLists.Dividers', []);
 
     thisModule.controller('DividersController',
         function($scope) {

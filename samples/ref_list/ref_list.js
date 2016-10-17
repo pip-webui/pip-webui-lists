@@ -3,7 +3,7 @@
 (function () {
     'use strict';
 
-    var thisModule = angular.module('appBasicBehaviors.RefList', []);
+    var thisModule = angular.module('appLists.RefList', []);
 
     thisModule.controller('RefListController',
         function($scope) {

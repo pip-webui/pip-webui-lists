@@ -3,7 +3,7 @@
 (function () {
     'use strict';
 
-    var thisModule = angular.module('appComponentsStyles.Chips', []);
+    var thisModule = angular.module('appLists.Chips', []);
 
     thisModule.controller('ChipsController',
         function($scope) {

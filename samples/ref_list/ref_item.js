@@ -3,7 +3,7 @@
 (function () {
     'use strict';
 
-    var thisModule = angular.module('appComponentsStyles.RefItem', []);
+    var thisModule = angular.module('appLists.RefItem', []);
 
     thisModule.controller('RefItemController',
         function($scope) {

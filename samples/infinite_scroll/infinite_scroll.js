@@ -3,7 +3,7 @@
 (function () {
     'use strict';
 
-    var thisModule = angular.module('appBasicBehaviors.InfiniteScroll', []);
+    var thisModule = angular.module('appLists.InfiniteScroll', []);
 
   /*  thisModule.config(function(pipTranslateProvider) {
 

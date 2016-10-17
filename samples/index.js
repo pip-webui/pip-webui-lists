@@ -5,26 +5,38 @@
 
     var content = [
         { title: 'Reference list', state: 'ref_list', url: '/ref_list', controller: 'RefListController', templateUrl: 'ref_list/ref_list.html' },
+        { title: 'Reference item', state: 'ref_item', url: '/ref_item', controller: 'RefItemController', templateUrl: 'ref_list/ref_item.html' },
         { title: 'Check list', state: 'check_list', url: '/check_list', controller: 'CheckListController', templateUrl: 'check_list/check_list.html' },
-        { title: 'Action list', state: 'action_list', url: '/action_list', controller: 'ActionListController', templateUrl: 'action_list/action_list.html' },
+        { title: 'Simple list', state: 'simple_list', url: '/simple_list', controller: 'SimpleListController', templateUrl: 'check_list/simple_list.html' },
+        { title: 'Chips', state: 'chips', url: '/chips', controller: 'ChipsController', templateUrl: 'chips/chips.html' },
+        { title: 'Dividers', state: 'dividers', url: '/dividers', controller: 'DividersController', templateUrl: 'dividers/dividers.html' },
         { title: 'Draggable', state: 'draggable', url: '/draggable', controller: 'DraggableController', templateUrl: 'draggable/draggable.html' },
         { title: 'Draggable Input', state: 'draggable_input', url: '/draggable_input', controller: 'DraggableInputController', templateUrl: 'draggable/draggable_input.html' },
         { title: 'Focused', state: 'focused', url: '/focused', controller: 'FocusedController', templateUrl: 'focused/focused.html' },
         { title: 'Selected', state: 'selected', url: '/selected', controller: 'SelectedController', templateUrl: 'selected/selected.html' },
         { title: 'Infinite Scroll', state: 'infinite_scroll', url: '/infinite_scroll', controller: 'InfiniteScrollController', templateUrl: 'infinite_scroll/infinite_scroll.html' },
+        { title: 'Table', state: 'table', url: '/table', controller: 'TableController', templateUrl: 'table/table.html' },
+        { title: 'Tag list', state: 'tag_list', url: '/tag_list', controller: 'TagsController', templateUrl: 'tag_list/tag_list.html' },
+
         //{ title: 'Unsaved changes', state: 'unsaved_changes', url: '/unsaved_changes', controller: 'UnsavedChangesController', templateUrl: 'unsaved_changes.html' },
         //{ title: 'Fab\'s tooltip visibility', state: 'fab_tooltip', url: '/fab_tooltip', controller: 'FabTooltipVisibilityController', templateUrl: 'fab_tooltip_visibility.html' }
     ];
 
-    var thisModule = angular.module('appBasicBehaviors', 
+    var thisModule = angular.module('appLists',
         [
             // 3rd Party Modules
             'ui.router', 'ui.utils', 'ngResource', 'ngAria', 'ngCookies', 'ngSanitize', 'ngMessages',
             'ngMaterial', 'wu.masonry', 'LocalStorageModule', 'angularFileUpload', 'ngAnimate', 
-			//'appBasicBehaviors.FabTooltipVisibility', 'appBasicBehaviors.UnsavedChanges',
-            'appBasicBehaviors.Draggable', 'appBasicBehaviors.Focused',
-            'appBasicBehaviors.Selected', 'appBasicBehaviors.InfiniteScroll', 'appBasicBehaviors.DraggableInput',
-            'appBasicBehaviors.RefList', 'appBasicBehaviors.ActionList', 'appBasicBehaviors.CheckList'
+			//'appLists.FabTooltipVisibility', 'appLists.UnsavedChanges',
+            //'appLists.ActionList',
+            'appLists.Draggable', 'appLists.Focused',
+            'appLists.Selected', 'appLists.InfiniteScroll', 'appLists.DraggableInput',
+            'appLists.RefList',  'appLists.CheckList',
+            'appLists.Chips', 'appLists.RefItem',
+            'appLists.Dividers',
+            'appLists.Table',
+            'appLists.SimpleList',
+            'appLists.Tags'
         ]
     );
 

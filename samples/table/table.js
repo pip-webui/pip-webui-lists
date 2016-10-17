@@ -3,7 +3,7 @@
 (function () {
     'use strict';
 
-    var thisModule = angular.module('appComponentsStyles.Table', []);
+    var thisModule = angular.module('appLists.Table', []);
 
     thisModule.controller('TableController',
         function($scope) {

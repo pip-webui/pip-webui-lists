@@ -3,7 +3,7 @@
 (function () {
     'use strict';
 
-    var thisModule = angular.module('appComponentsStyles.SimpleList', []);
+    var thisModule = angular.module('appLists.SimpleList', []);
 
     thisModule.controller('SimpleListController',
         function($scope) {

@@ -3,7 +3,7 @@
 (function () {
     'use strict';
 
-    var thisModule = angular.module('appBasicBehaviors.DraggableInput', []);
+    var thisModule = angular.module('appLists.DraggableInput', []);
 
     thisModule.controller('DraggableInputController',
         function($scope) {

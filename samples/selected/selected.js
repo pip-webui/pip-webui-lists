@@ -3,7 +3,7 @@
 (function () {
     'use strict';
 
-    var thisModule = angular.module('appBasicBehaviors.Selected', []);
+    var thisModule = angular.module('appLists.Selected', []);
 
     thisModule.controller('SelectedController',
         function($scope) {

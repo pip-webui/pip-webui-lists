@@ -1,34 +1,16 @@
 (function (angular) {
     'use strict';
 
-    var thisModule = angular.module('appControls.Tags', []);
-
-    thisModule.config(function (pipTranslateProvider) {
-        pipTranslateProvider.translations('en', {
-            TYPE_TAG: 'Type tag',
-            SIMPLE_TAG_LIST: 'Simple tag list',
-            TAGS_LIST_WITH_TYPE: 'Tag list with entity type'
-        });
-        pipTranslateProvider.translations('ru', {
-            TYPE_TAG: '??? ????',
-            SIMPLE_TAG_LIST: '??????? ?????? ?????',
-            TAGS_LIST_WITH_TYPE: '?????? ????? ? ?????'
-        });
-    });
-
+    var thisModule = angular.module('appLists.Tags', []);
+    
     thisModule.controller('TagsController',
-        function ($scope, pipTranslate, pipAppBar, $timeout) {
+        function ($scope, $timeout) {
 
             $timeout(function() {
                 $('pre code').each(function(i, block) {
                     Prism.highlightElement(block);
                 });
             });
-            
-            pipAppBar.hideShadow();
-            pipAppBar.showMenuNavIcon();
-            pipAppBar.showLanguage();
-            pipAppBar.showTitleText('CONTROLS');
             
             $scope.example1 = {};
             $scope.example2 = {};
@@ -46,7 +28,7 @@
                 'Tag 22', 'Tag 23', 'Tag 24', 'Tag 25', 'Tag 26', 'Tag 27', 'Tag 28'
             ];
             $scope.example3.type = 'goal';
-            $scope.example3.typeLocal = pipTranslate.translate($scope.example3.type);
+            $scope.example3.typeLocal = $scope.example3.type;
         }
     );
 

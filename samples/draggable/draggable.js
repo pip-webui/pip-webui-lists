@@ -3,7 +3,7 @@
 (function () {
     'use strict';
 
-    var thisModule = angular.module('appBasicBehaviors.Draggable', []);
+    var thisModule = angular.module('appLists.Draggable', []);
 
     thisModule.controller('DraggableController',
         function($scope) {
