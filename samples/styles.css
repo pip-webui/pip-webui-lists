@@ -10,9 +10,9 @@
 }
 
 .pip-recommended-header pip-title {
-    overflow:      hidden;
+    overflow: hidden;
     text-overflow: ellipsis;
-    white-space:   nowrap;
+    white-space: nowrap;
 }
 
 .pip-recommended-header .md-button > span {
@@ -23,50 +23,60 @@
     padding: 24px !important;
 }
 
-
 /* Styles for Selected */
 
 .app-selected .pip-list-x {
-	background-color: grey;
-	max-height: 200px;
-	overflow-y: scroll;
+    background-color: grey;
+    max-height: 200px;
+    overflow-y: scroll;
 }
 
 .app-selected .pip-list-x:focus {
-	background-color: yellow;
-	outline: blue solid 1px;
+    background-color: yellow;
+    outline: blue solid 1px;
 }
 
 .app-selected .pip-list-x .pip-list-x-item {
-	position: relative;
-	overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
 
 .app-selected .pip-list-x-item:hover,
 .app-selected .pip-list-x-item.selected {
-	background-color: red;
+    background-color: red;
 }
 
 /* Styles for Infinite Scroll */
 
 .app-infinite-scroll {
-	border: 2px solid red;
-	overflow-y: auto;
-	height: 500px;
+    border: 2px solid red;
+    overflow-y: auto;
+    height: 500px;
 }
 
 .app-infinite-scroll .item-container {
-	width: 680px;
-	margin: 0 auto;
+    width: 680px;
+    margin: 0 auto;
 }
 
 .app-infinite-scroll .item {
-	margin: 10px;
-	display: inline-block;
-	width: 200px;
-	height: 100px;
-	text-align: center;
-	line-height: 100px;
-	vertical-align: middle;
-	border: 2px solid black;
+    margin: 10px;
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    vertical-align: middle;
+    border: 2px solid black;
+}
+
+.p24-flex {
+    padding: 24px;
+}
+
+@media (max-width: 768px) {
+    .p24-flex {
+        padding: 16px;
+    }
+
 }
