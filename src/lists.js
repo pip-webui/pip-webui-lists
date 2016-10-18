@@ -12,7 +12,6 @@
         'pipFocused',
         'pipSelected',
         'pipInfiniteScroll',
-        'pipDraggable',
 	'pipTagList'
     ]);
     
