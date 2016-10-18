@@ -84,7 +84,7 @@
                 $stateProvider.state(contentItem.state, contentItem);
             }
 
-            $urlRouterProvider.otherwise('/date');
+            $urlRouterProvider.otherwise('/ref_list');
         } 
     );
 
