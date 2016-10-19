@@ -8,9 +8,9 @@
 (function () {
     'use strict';
 
-    var thisModule = angular.module("pipSelected", ['pipUtils']);
+    var thisModule = angular.module("pipSelected", []);
 
-    thisModule.directive('pipSelected',function ($parse, pipUtils, $mdConstant, $timeout) {
+    thisModule.directive('pipSelected',function ($parse, $mdConstant, $timeout) {
         return {
             restrict: 'A',
             scope: false,
@@ -22,9 +22,9 @@
                     idSetter = idGetter ? idGetter.assign : null,
                     changeGetter = $attrs.pipSelect ? $parse($attrs.pipSelect) : null,
                     enterSpaceGetter = $attrs.pipEnterSpacePress ? $parse($attrs.pipEnterSpacePress) : null,
-                    noScroll = pipUtils.toBoolean($attrs.pipNoScroll),
-                    modifier = pipUtils.toBoolean($attrs.pipSkipHidden) ? ':visible' : '',
-                    className = pipUtils.toBoolean($attrs.pipTreeList) ? '.pip-selectable-tree' : '.pip-selectable',
+                    noScroll = toBoolean($attrs.pipNoScroll),
+                    modifier = toBoolean($attrs.pipSkipHidden) ? ':visible' : '',
+                    className = toBoolean($attrs.pipTreeList) ? '.pip-selectable-tree' : '.pip-selectable',
                     selectedIndex = indexGetter($scope),
                     currentElementTabinex = $element.attr('tabindex'),
                     pipSelectedWatch = $attrs.pipSelectedWatch;
@@ -33,7 +33,7 @@
                 $element.attr('tabindex', currentElementTabinex || 0);
 
                 // Watch selected item index
-                if (!pipUtils.toBoolean($attrs.pipTreeList)) {
+                if (!toBoolean($attrs.pipTreeList)) {
                     $scope.$watch(indexGetter, function(newSelectedIndex) {
                         selectItem({itemIndex: newSelectedIndex});
                     });
@@ -59,6 +59,14 @@
                 // Select item defined by index
                 selectItem({itemIndex: selectedIndex, items: $element.find(className)});
 
+                // Converts value into boolean
+                function toBoolean(value) {
+                    if (value == null) return false;
+                    if (!value) return false;
+                    value = value.toString().toLowerCase();
+                    return value == '1' || value == 'true';
+                };
+                
                 // Functions and listeners
 
                 function selectItem(itemParams) {
