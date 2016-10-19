@@ -10,7 +10,7 @@
 (function (angular) {
     'use strict';
 
-    var thisModule = angular.module('pipTagList', []);
+    var thisModule = angular.module('pipTagList', ['pipList.Translate']);
 
     /**
      * pipTags - set of tags
@@ -26,7 +26,7 @@
                     pipType: '=',
                     pipTypeLocal: '='
                 },
-                templateUrl: 'tags/tag_list.html',
+                templateUrl: 'tag_list/tag_list.html',
                 controller: function ($scope, $element, $attrs) {
                     var tagsGetter;
 

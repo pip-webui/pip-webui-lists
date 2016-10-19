@@ -16,6 +16,53 @@
     ]);
     
 })();
+(function(module) {
+try {
+  module = angular.module('pipLists.Templates');
+} catch (e) {
+  module = angular.module('pipLists.Templates', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('tag_list/tag_list.html',
+    '<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + pipType + \'-chips\'}}"\n' +
+    '     ng-if="pipType && !pipTypeLocal">\n' +
+    '\n' +
+    '    <span>{{pipType.toUpperCase() | translate | uppercase}}</span>\n' +
+    '</div>\n' +
+    '<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + pipType + \'-chips\'}}"\n' +
+    '     ng-if="pipType && pipTypeLocal">\n' +
+    '\n' +
+    '    <span>{{pipTypeLocal.toUpperCase() | translate | uppercase}}</span>\n' +
+    '</div>\n' +
+    '<div class="pip-chip rm4" ng-repeat="tag in pipTags">\n' +
+    '    <span>{{::tag}}</span>\n' +
+    '</div>');
+}]);
+})();
+
+/**
+ * @file Optional filter to translate string resources
+ * @copyright Digital Living Software Corp. 2014-2016
+ */
+ 
+/* global angular */
+
+(function () {
+    'use strict';
+
+    var thisModule = angular.module('pipList.Translate', []);
+
+    thisModule.filter('translate', ['$injector', function ($injector) {
+        var pipTranslate = $injector.has('pipTranslate') 
+            ? $injector.get('pipTranslate') : null;
+
+        return function (key) {
+            return pipTranslate  ? pipTranslate.translate(key) || key : key;
+        }
+    }]);
+
+})();
+
 /**
  * @file Keyboard navigation over few focusable controls
  * @copyright Digital Living Software Corp. 2014-2016
@@ -514,7 +561,7 @@
 (function (angular) {
     'use strict';
 
-    var thisModule = angular.module('pipTagList', []);
+    var thisModule = angular.module('pipTagList', ['pipList.Translate']);
 
     /**
      * pipTags - set of tags
@@ -530,7 +577,7 @@
                     pipType: '=',
                     pipTypeLocal: '='
                 },
-                templateUrl: 'tags/tag_list.html',
+                templateUrl: 'tag_list/tag_list.html',
                 controller: ['$scope', '$element', '$attrs', function ($scope, $element, $attrs) {
                     var tagsGetter;
 

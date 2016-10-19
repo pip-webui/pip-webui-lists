@@ -1,7 +1,7 @@
 (function (angular) {
     'use strict';
 
-    var thisModule = angular.module('appLists.Tags', []);
+    var thisModule = angular.module('appLists.Tags', ['pipTagList', 'pipLists.Templates']);
     
     thisModule.controller('TagsController',
         function ($scope, $timeout) {
