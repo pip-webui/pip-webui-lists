@@ -37,6 +37,10 @@
 <body ng-app="appLists" ng-controller="AppController" md-theme="{{ $theme || 'blue' }}" class="{{ $theme }} pip-main layout-column">
     <md-toolbar>
         <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="menu"
+                       ng-click="onToggleMenu()" hide-gt-sm>
+                <md-icon md-svg-icon="icons:menu"></md-icon>
+            </md-button>
             <div class="flex-var text-overflow">Lists</div>
         </div>
     </md-toolbar>
