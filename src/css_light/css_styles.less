@@ -28,3 +28,9 @@
 
 .no-divider { border: none !important;  }
 .divider    { border: @divider-border;  }
+
+input, p, div, li, md-list-item, md-list, a, md-autocomplete, span, button {
+    &:focus {
+        outline-width: 0 !important;
+    }
+} 
