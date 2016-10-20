@@ -1,3 +1,21 @@
+/**
+ * @file Registration of all WebUI list controls
+ * @copyright Digital Living Software Corp. 2014-2016
+ */
+
+/* global angular */
+
+(function () {
+    'use strict';
+
+    angular.module('pipLists', [
+        'pipFocused',
+        'pipSelected',
+        'pipInfiniteScroll',
+	'pipTagList'
+    ]);
+    
+})();
 (function(module) {
 try {
   module = angular.module('pipLists.Templates');
@@ -22,24 +40,6 @@ module.run(['$templateCache', function($templateCache) {
 }]);
 })();
 
-/**
- * @file Registration of all WebUI list controls
- * @copyright Digital Living Software Corp. 2014-2016
- */
-
-/* global angular */
-
-(function () {
-    'use strict';
-
-    angular.module('pipLists', [
-        'pipFocused',
-        'pipSelected',
-        'pipInfiniteScroll',
-	'pipTagList'
-    ]);
-    
-})();
 /**
  * @file Optional filter to translate string resources
  * @copyright Digital Living Software Corp. 2014-2016
