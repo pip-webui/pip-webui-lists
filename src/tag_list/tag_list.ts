@@ -7,7 +7,7 @@
  * - Do not use ng-if, instead generate template statically
  */
 
-(function (angular) {
+(function () {
     'use strict';
 
     var thisModule = angular.module('pipTagList', ['pipList.Translate']);
@@ -56,4 +56,4 @@
         }
     );
 
-})(window.angular);
+})();

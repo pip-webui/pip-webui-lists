@@ -13,7 +13,7 @@
     thisModule.directive('pipFocused', function($timeout, $mdConstant) {
         return {
             require: "?ngModel",
-            link: function ($scope, $element, $attrs) {
+            link: function ($scope: any, $element, $attrs: any) {
                 var controls, controlsLength,
                     withHidden = $attrs.pipWithHidden;
 

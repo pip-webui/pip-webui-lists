@@ -5,7 +5,7 @@ module.exports = {
     },
     build: {
         js: true,
-        ts: false,
+        ts: true,
         html: true,
         css: true,
         lib: true,

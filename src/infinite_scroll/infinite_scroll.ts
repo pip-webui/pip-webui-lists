@@ -25,7 +25,7 @@
                     pipScrollUseDocumentBottom: '=',
                     pipScrollListenForEvent: '@'
                 },
-                link: function($scope, $element, $attrs) {
+                link: function($scope: any, $element, $attrs: any) {
                     var 
                         checkWhenEnabled = null,
                         scrollContainer,

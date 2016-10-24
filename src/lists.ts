@@ -12,7 +12,7 @@
         'pipFocused',
         'pipSelected',
         'pipInfiniteScroll',
-	'pipTagList'
+	    'pipTagList'
     ]);
     
 })();

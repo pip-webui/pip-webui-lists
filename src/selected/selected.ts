@@ -14,7 +14,7 @@
         return {
             restrict: 'A',
             scope: false,
-            link: function ($scope, $element, $attrs) {
+            link: function ($scope: any, $element, $attrs: any) {
                 var
                     indexGetter = $attrs.pipSelected ? $parse($attrs.pipSelected) : null,
                     indexSetter = indexGetter ? indexGetter.assign : null,
