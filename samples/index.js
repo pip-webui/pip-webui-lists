@@ -1,4 +1,4 @@
-/* global angular */
+﻿/* global angular */
 
 (function () {
     'use strict';
@@ -10,9 +10,6 @@
         { title: 'Simple list', state: 'simple_list', url: '/simple_list', controller: 'SimpleListController', templateUrl: 'simple_list/simple_list.html' },
         { title: 'Chips', state: 'chips', url: '/chips', controller: 'ChipsController', templateUrl: 'chips/chips.html' },
         { title: 'Dividers', state: 'dividers', url: '/dividers', controller: 'DividersController', templateUrl: 'dividers/dividers.html' },
-        { title: 'Focused', state: 'focused', url: '/focused', controller: 'FocusedController', templateUrl: 'focused/focused.html' },
-        { title: 'Selected', state: 'selected', url: '/selected', controller: 'SelectedController', templateUrl: 'selected/selected.html' },
-        { title: 'Infinite Scroll', state: 'infinite_scroll', url: '/infinite_scroll', controller: 'InfiniteScrollController', templateUrl: 'infinite_scroll/infinite_scroll.html' },
         { title: 'Table', state: 'table', url: '/table', controller: 'TableController', templateUrl: 'table/table.html' },
         { title: 'Tag list', state: 'tag_list', url: '/tag_list', controller: 'TagsController', templateUrl: 'tag_list/tags_list.html' }
 
@@ -27,8 +24,6 @@
             'ngMaterial', 'wu.masonry', 'LocalStorageModule', 'angularFileUpload', 'ngAnimate',
             'pipLists.Templates', 'pipLists',
 			
-            'appLists.Focused',
-            'appLists.Selected', 'appLists.InfiniteScroll', 
             'appLists.RefList',  'appLists.CheckList',
             'appLists.Chips', 'appLists.RefItem',
             'appLists.Dividers',
