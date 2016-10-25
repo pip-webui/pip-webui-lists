@@ -12,16 +12,15 @@
         { title: 'Dividers', state: 'dividers', url: '/dividers', controller: 'DividersController', templateUrl: 'dividers/dividers.html' },
         { title: 'Table', state: 'table', url: '/table', controller: 'TableController', templateUrl: 'table/table.html' },
         { title: 'Tag list', state: 'tag_list', url: '/tag_list', controller: 'TagsController', templateUrl: 'tag_list/tags_list.html' }
-
-        //{ title: 'Unsaved changes', state: 'unsaved_changes', url: '/unsaved_changes', controller: 'UnsavedChangesController', templateUrl: 'unsaved_changes.html' },
-        //{ title: 'Fab\'s tooltip visibility', state: 'fab_tooltip', url: '/fab_tooltip', controller: 'FabTooltipVisibilityController', templateUrl: 'fab_tooltip_visibility.html' }
     ];
 
     var thisModule = angular.module('appLists',
         [
             // 3rd Party Modules
             'ui.router', 'ui.utils', 'ngResource', 'ngAria', 'ngCookies', 'ngSanitize', 'ngMessages',
-            'ngMaterial', 'wu.masonry', 'LocalStorageModule', 'angularFileUpload', 'ngAnimate',
+            'ngMaterial', 'wu.masonry', 'LocalStorageModule', 
+            // 'angularFileUpload', 'ngAnimate',
+            
             'pipLists.Templates', 'pipLists',
 			
             'appLists.RefList',  'appLists.CheckList',
@@ -35,44 +34,6 @@
 
     thisModule.config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider, $mdIconProvider) {
             $mdIconProvider.iconSet('icons', '../../lib/images/icons.svg', 512);
-        //pipTranslateProvider, 
-//             $mdThemingProvider.theme('blue')
-//                 .primaryPalette('blue')
-//                 .accentPalette('green');
-// 
-//             $mdThemingProvider.theme('pink')
-//                 .primaryPalette('pink')
-//                 .accentPalette('orange');
-// 
-//             $mdThemingProvider.theme('green')
-//                 .primaryPalette('green')
-//                 .accentPalette('purple');
-// 
-//             $mdThemingProvider.theme('grey')
-//                 .primaryPalette('grey')
-//                 .accentPalette('yellow');
-// 
-//             $mdThemingProvider.setDefaultTheme('blue');
-
-        /*
-            // String translations
-            pipTranslateProvider.translations('en', {
-                'APPLICATION_TITLE': 'WebUI Sampler',
-
-                'blue': 'Blue Theme',
-                'green': 'Green Theme',
-                'pink': 'Pink Theme',
-                'grey': 'Grey Theme'
-            });
-
-            pipTranslateProvider.translations('ru', {
-                'APPLICATION_TITLE': 'WebUI Демонстратор',
-
-                'blue': 'Голубая тема',
-                'green': 'Зеленая тема',
-                'pink': 'Розовая тема',
-                'grey': 'Серая тема'
-            });*/
 
             for (var i = 0; i < content.length; i++) {
                 var contentItem = content[i];

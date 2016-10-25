@@ -22,16 +22,23 @@ module.run(['$templateCache', function($templateCache) {
 }]);
 })();
 
+/**
+ * @file Registration of all WebUI list controls
+ * @copyright Digital Living Software Corp. 2014-2016
+ */
+/* global angular */
 (function () {
     'use strict';
     angular.module('pipLists', [
-        'pipFocused',
-        'pipSelected',
-        'pipInfiniteScroll',
         'pipTagList'
     ]);
 })();
 
+/**
+ * @file Optional filter to translate string resources
+ * @copyright Digital Living Software Corp. 2014-2016
+ */
+/* global angular */
 (function () {
     'use strict';
     var thisModule = angular.module('pipList.Translate', []);
@@ -44,9 +51,22 @@ module.run(['$templateCache', function($templateCache) {
     }]);
 })();
 
+/**
+ * @file Tag list control
+ * @copyright Digital Living Software Corp. 2014-2015
+ * @todo
+ * - Improve samples in sampler app
+ * - What's pipType and pipTypeLocal? Give better name
+ * - Do not use ng-if, instead generate template statically
+ */
 (function () {
     'use strict';
     var thisModule = angular.module('pipTagList', ['pipList.Translate']);
+    /**
+     * pipTags - set of tags
+     * pipType - additional type tag
+     * pipTypeLocal - additional translated type tag
+     */
     thisModule.directive('pipTagList', ['$parse', function ($parse) {
         return {
             restrict: 'EA',
@@ -60,6 +80,7 @@ module.run(['$templateCache', function($templateCache) {
                 var tagsGetter;
                 tagsGetter = $parse($attrs.pipTags);
                 $element.css('display', 'block');
+                // Set tags
                 $scope.tags = tagsGetter($scope);
                 function toBoolean(value) {
                     if (value == null)
@@ -69,11 +90,13 @@ module.run(['$templateCache', function($templateCache) {
                     value = value.toString().toLowerCase();
                     return value == '1' || value == 'true';
                 }
+                // Also optimization to avoid watch if it is unnecessary
                 if (toBoolean($attrs.pipRebind)) {
                     $scope.$watch(tagsGetter, function () {
                         $scope.tags = tagsGetter($scope);
                     });
                 }
+                // Add class
                 $element.addClass('pip-tag-list');
             }]
         };
