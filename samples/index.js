@@ -10,7 +10,6 @@
         { title: 'Check list', state: 'check_list', url: '/check_list', controller: 'CheckListController', templateUrl: 'check_list/check_list.html' },
         { title: 'Simple list', state: 'simple_list', url: '/simple_list', controller: 'SimpleListController', templateUrl: 'simple_list/simple_list.html' },
         { title: 'Chips', state: 'chips', url: '/chips', controller: 'ChipsController', templateUrl: 'chips/chips.html' },
-        { title: 'Dividers', state: 'dividers', url: '/dividers', controller: 'DividersController', templateUrl: 'dividers/dividers.html' },
         { title: 'Table', state: 'table', url: '/table', controller: 'TableController', templateUrl: 'table/table.html' },
         { title: 'Tag list', state: 'tag_list', url: '/tag_list', controller: 'TagsController', templateUrl: 'tag_list/tags_list.html' }
     ];
@@ -26,7 +25,6 @@
 			
             'appLists.RefList',  'appLists.CheckList',
             'appLists.Chips', 'appLists.RefItem',
-            'appLists.Dividers',
             'appLists.Table',
             'appLists.SimpleList',
             'appLists.Tags',
