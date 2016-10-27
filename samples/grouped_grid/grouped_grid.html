@@ -1,3 +1,18 @@
 <p class="text-title h72 m0 bm8 layout-row layout-align-start-center">
     Grouped Grid
 </p>
+
+<div class="pip-grouped-grid">
+    <div ng-repeat="adapter in adapters" class="pip-group">
+        <div class="pip-title-group">
+            {{adapter.name}}
+        </div>
+
+        <div ng-click="gotoDetails(service)"
+             ng-repeat="service in adapter.services"
+             class="pip-tile bg-color-{{service.color}}">
+            <md-icon class="pip-grid-icon pip-white-icon" md-svg-icon="icons:circle"></md-icon>
+            <div class="text-overflow pip-text">{{::service.name}}</div>
+        </div>
+    </div>
+</div>
