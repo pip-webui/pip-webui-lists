@@ -1,7 +1,7 @@
 {
     "name": "pip-webui-lists",
     "version": "1.5.0",
-    "description": "lists for Pip.WebUI",
+    "description": "List controls for Pip.WebUI",
     "main": "",
     "authors": [
         {

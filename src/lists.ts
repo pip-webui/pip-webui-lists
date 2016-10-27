@@ -9,10 +9,7 @@
     'use strict';
 
     angular.module('pipLists', [
-        'pipFocused',
-        'pipSelected',
-        'pipInfiniteScroll',
-	'pipTagList'
+	    'pipTagList'
     ]);
     
 })();
