@@ -4,6 +4,7 @@
     'use strict';
 
     var content = [
+        { title: 'Grouped Grid', state: 'grouped_grid', url: '/grouped_grid', controller: 'GroupedGridController', templateUrl: 'grouped_grid/grouped_grid.html' },
         { title: 'Reference list', state: 'ref_list', url: '/ref_list', controller: 'RefListController', templateUrl: 'ref_list/ref_list.html' },
         { title: 'Reference item', state: 'ref_item', url: '/ref_item', controller: 'RefItemController', templateUrl: 'ref_list/ref_item.html' },
         { title: 'Check list', state: 'check_list', url: '/check_list', controller: 'CheckListController', templateUrl: 'check_list/check_list.html' },
@@ -34,7 +35,8 @@
             'appLists.Dividers',
             'appLists.Table',
             'appLists.SimpleList',
-            'appLists.Tags'
+            'appLists.Tags',
+            'appLists.GroupedGrid'
         ]
     );
 

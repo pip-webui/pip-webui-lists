@@ -3,9 +3,9 @@
 (function () {
     'use strict';
 
-    var thisModule = angular.module('appLists.Dividers', []);
+    var thisModule = angular.module('appLists.GroupedGrid', []);
 
-    thisModule.controller('DividersController',
+    thisModule.controller('GroupedGridController',
         function($scope) {
             //...
 
