@@ -177,4 +177,15 @@ table td[class*=col-], table th[class*=col-] {
 
 }
 
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+
+th {
+  text-align: left;
+  color: @color-secondary;
+  font: @font-body2;
+}
 

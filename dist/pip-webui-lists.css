@@ -650,6 +650,21 @@ table th[class*=col-] {
     border: 1px solid rgba(0, 0, 0, 0.12);
   }
 }
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+th {
+  text-align: left;
+  color: rgba(0, 0, 0, 0.54);
+  font: normal 500 14px Roboto, 'Helvetica Neue', sans-serif;
+}
 .pip-chip,
 .pip-type-chip {
   font: normal 500 14px Roboto, 'Helvetica Neue', sans-serif;
