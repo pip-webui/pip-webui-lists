@@ -2,7 +2,8 @@ module.exports = {
     module: {
         name: 'pipLists',
         styles: 'lists',
-        export: 'pip'
+        export: 'pip',
+        standalone: 'pip.lists'
     },
     build: {
         js: false,
