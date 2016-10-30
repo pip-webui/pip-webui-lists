@@ -1,36 +1,4 @@
-(function(module) {
-try {
-  module = angular.module('pipLists.Templates');
-} catch (e) {
-  module = angular.module('pipLists.Templates', []);
-}
-module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('tag_list/tag_list.html',
-    '<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + pipType + \'-chips\'}}"\n' +
-    '     ng-if="pipType && !pipTypeLocal">\n' +
-    '\n' +
-    '    <span>{{pipType.toUpperCase() | translate | uppercase}}</span>\n' +
-    '</div>\n' +
-    '<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + pipType + \'-chips\'}}"\n' +
-    '     ng-if="pipType && pipTypeLocal">\n' +
-    '\n' +
-    '    <span>{{pipTypeLocal.toUpperCase() | translate | uppercase}}</span>\n' +
-    '</div>\n' +
-    '<div class="pip-chip rm4" ng-repeat="tag in pipTags">\n' +
-    '    <span>{{::tag}}</span>\n' +
-    '</div>');
-}]);
-})();
-
-
-
-(function () {
-    'use strict';
-    angular.module('pipLists', [
-        'pipTagList'
-    ]);
-})();
-
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 (function () {
     'use strict';
     var thisModule = angular.module('pipList.Translate', []);
@@ -42,7 +10,14 @@ module.run(['$templateCache', function($templateCache) {
         };
     }]);
 })();
-
+},{}],2:[function(require,module,exports){
+(function () {
+    'use strict';
+    angular.module('pipLists', [
+        'pipTagList'
+    ]);
+})();
+},{}],3:[function(require,module,exports){
 (function () {
     'use strict';
     var thisModule = angular.module('pipTagList', ['pipList.Translate']);
@@ -78,7 +53,34 @@ module.run(['$templateCache', function($templateCache) {
         };
     }]);
 })();
+},{}],4:[function(require,module,exports){
+(function(module) {
+try {
+  module = angular.module('pipLists.Templates');
+} catch (e) {
+  module = angular.module('pipLists.Templates', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('tag_list/tag_list.html',
+    '<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + pipType + \'-chips\'}}"\n' +
+    '     ng-if="pipType && !pipTypeLocal">\n' +
+    '\n' +
+    '    <span>{{pipType.toUpperCase() | translate | uppercase}}</span>\n' +
+    '</div>\n' +
+    '<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + pipType + \'-chips\'}}"\n' +
+    '     ng-if="pipType && pipTypeLocal">\n' +
+    '\n' +
+    '    <span>{{pipTypeLocal.toUpperCase() | translate | uppercase}}</span>\n' +
+    '</div>\n' +
+    '<div class="pip-chip rm4" ng-repeat="tag in pipTags">\n' +
+    '    <span>{{::tag}}</span>\n' +
+    '</div>');
+}]);
+})();
 
+
+
+},{}]},{},[1,2,3,4])
 
 
 //# sourceMappingURL=pip-webui-lists.js.map

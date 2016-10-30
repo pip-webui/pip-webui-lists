@@ -1,13 +1,16 @@
 module.exports = {
     module: {
         name: 'pipLists',
-        styles: 'lists'
+        styles: 'lists',
+        export: 'pip'
     },
     build: {
-        js: true,
-        ts: true,
+        js: false,
+        ts: false,
+        tsd: true,
+        bundle: true,
         html: true,
-        css: true,
+        less: true,
         lib: true,
         images: false,
         dist: false

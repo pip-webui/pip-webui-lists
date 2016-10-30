@@ -3,4 +3,5 @@
 /build
 /temp
 /lib
+/obj
 build.secret.js
