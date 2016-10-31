@@ -2,7 +2,7 @@ module.exports = {
     module: {
         name: 'pipLists',
         styles: 'lists',
-        export: 'pip',
+        export: 'pip.lists',
         standalone: 'pip.lists'
     },
     build: {
