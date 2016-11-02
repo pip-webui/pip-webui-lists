@@ -62,19 +62,7 @@ try {
 }
 module.run(['$templateCache', function($templateCache) {
   $templateCache.put('tag_list/tag_list.html',
-    '<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + pipType + \'-chips\'}}"\n' +
-    '     ng-if="pipType && !pipTypeLocal">\n' +
-    '\n' +
-    '    <span>{{pipType.toUpperCase() | translate | uppercase}}</span>\n' +
-    '</div>\n' +
-    '<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + pipType + \'-chips\'}}"\n' +
-    '     ng-if="pipType && pipTypeLocal">\n' +
-    '\n' +
-    '    <span>{{pipTypeLocal.toUpperCase() | translate | uppercase}}</span>\n' +
-    '</div>\n' +
-    '<div class="pip-chip rm4" ng-repeat="tag in pipTags">\n' +
-    '    <span>{{::tag}}</span>\n' +
-    '</div>');
+    '<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + pipType + \'-chips\'}}" ng-if="pipType && !pipTypeLocal"><span>{{pipType.toUpperCase() | translate | uppercase}}</span></div><div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + pipType + \'-chips\'}}" ng-if="pipType && pipTypeLocal"><span>{{pipTypeLocal.toUpperCase() | translate | uppercase}}</span></div><div class="pip-chip rm4" ng-repeat="tag in pipTags"><span>{{::tag}}</span></div>');
 }]);
 })();
 
