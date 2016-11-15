@@ -443,10 +443,6 @@ md-list-item.pip-check-list-item::before {
 .table-bordered > thead > tr > td {
   border-width: 1px;
 }
-.table-striped > tbody > tr:nth-child(odd) > td,
-.table-striped > tbody > tr:nth-child(odd) > th {
-  background-color: #f9f9f9;
-}
 .table {
   width: 100%;
   max-width: 100%;
@@ -458,7 +454,6 @@ md-list-item.pip-check-list-item::before {
   border-radius: 2px;
 }
 .table .table {
-  background-color: #fff;
   border-spacing: 0;
 }
 .table > thead > tr > th,
