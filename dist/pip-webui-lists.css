@@ -861,7 +861,7 @@ th {
   border-right-color: rgba(250, 250, 250, 0.12) !important;
 }
 .pip-grouped-grid {
-  max-width: 840px;
+  max-width: 740px;
   margin: 0 auto;
 }
 .pip-grouped-grid .pip-title-group {
