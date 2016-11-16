@@ -68,7 +68,7 @@ module.run(['$templateCache', function($templateCache) {
 
 
 
-},{}]},{},[4,1,2,3])(4)
+},{}]},{},[1,2,3,4])(4)
 });
 
 
