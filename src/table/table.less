@@ -189,3 +189,29 @@ th {
   font: @font-body2;
 }
 
+
+
+.table {
+  table-layout: fixed; 
+}
+
+.table {
+    & > thead > tr > th {
+      font-size: 12px !important;
+    }
+    tbody {
+      font-size: 14px;
+    }
+    
+}
+.table > thead > tr > th, 
+.table > tbody > tr > th, 
+.table > tfoot > tr > th, 
+.table > thead > tr > td, 
+.table > tbody > tr > td, 
+.table > tfoot > tr > td {
+    line-height: 24px;
+    padding-top: 12px;//!important;
+    padding-bottom: 12px; // !important;
+}
+
