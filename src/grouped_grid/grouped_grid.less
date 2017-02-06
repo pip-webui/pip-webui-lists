@@ -36,6 +36,7 @@
     cursor: pointer;
     border-radius: 2px;
   }
+  
 
   @color-0:                #ef5350;
   @color-1:                #ec407a;
@@ -72,9 +73,85 @@
   .bg-color-15 { background-color: @color-15; }
 
 }
+
 @media (max-width: 500px) {
   .pip-grouped-grid {
     max-width: 300px;
   }
 
+}
+
+
+.pip-grouped-grid {
+  .pip-tile {
+    position: relative;
+  }
+
+  .pip-title-group {
+    font-size: 24px;
+    color: @color-secondary;
+  }
+
+  &.grouped-grid-xs {
+    max-width: 100%;
+  }
+  
+  .pip-group-md {
+    display: block;
+    padding: 0 16px;
+  }
+  .pip-group-xs {
+    display: block;
+    padding: 0 12px;
+  }
+  .pip-tile-xs {
+    width: ~"calc(100% - 8px)";
+    height: 48px;
+    .flex();
+    .flex-direction(row);
+
+    .pip-text {
+      margin-top: 16px;
+      margin-bottom: 16px; 
+      .flex();
+    }
+
+    .pip-grid-icon {
+        margin: 0;
+        margin-right: 16px;
+        height: 24px;
+        margin-left: 16px;
+        width: 24px;
+        margin-top: 12px;
+    }
+
+    .pip-badge {
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      margin-top: 8px;
+      margin-right: 8px; 
+    }
+  }
+  .pip-badge {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    font-size: 9px;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    color: #fff;
+    //border: 1px solid rgba(0,0,0,0.1);
+    line-height: 18px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #FF5252;
+  }
+}
+
+@media (max-width: 500px) {
+  .pip-grouped-grid {
+      max-width: 100%;
+  }
 }
