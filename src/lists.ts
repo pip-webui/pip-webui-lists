@@ -5,11 +5,9 @@
 
 /* global angular */
 
-(function () {
+(() => {
     'use strict';
 
-    angular.module('pipLists', [
-	    'pipTagList'
-    ]);
+    angular.module('pipLists', [ 'pipTagList' ]);
     
 })();

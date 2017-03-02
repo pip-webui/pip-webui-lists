@@ -13,45 +13,53 @@
 },{}],2:[function(require,module,exports){
 (function () {
     'use strict';
-    angular.module('pipLists', [
-        'pipTagList'
-    ]);
+    angular.module('pipLists', ['pipTagList']);
 })();
 },{}],3:[function(require,module,exports){
+var TagListController = (function () {
+    TagListController.$inject = ['$scope', '$element'];
+    function TagListController($scope, $element) {
+        var _this = this;
+        this.tags = $scope['pipTags'];
+        this.type = $scope['pipType'];
+        this.typeLocal = $scope['pipTypeLocal'];
+        this._rebind = $scope['pipRebind'];
+        if (this.toBoolean(this._rebind)) {
+            $scope.$watch('pipTags', function () {
+                _this.tags = $scope['pipTags'];
+            });
+        }
+        $element.css('display', 'block');
+        $element.addClass('pip-tag-list');
+    }
+    TagListController.prototype.toBoolean = function (value) {
+        if (_.isNull(value) || _.isUndefined(value))
+            return false;
+        if (!value)
+            return false;
+        value = value.toString().toLowerCase();
+        return value == '1' || value == 'true';
+    };
+    return TagListController;
+}());
 (function () {
     'use strict';
-    var thisModule = angular.module('pipTagList', ['pipList.Translate']);
-    thisModule.directive('pipTagList', ['$parse', function ($parse) {
+    TagList.$inject = ['$parse'];
+    function TagList($parse) {
         return {
-            restrict: 'EA',
+            restrict: 'E',
             scope: {
                 pipTags: '=',
                 pipType: '=',
                 pipTypeLocal: '='
             },
             templateUrl: 'tag_list/tag_list.html',
-            controller: ['$scope', '$element', '$attrs', function ($scope, $element, $attrs) {
-                var tagsGetter;
-                tagsGetter = $parse($attrs.pipTags);
-                $element.css('display', 'block');
-                $scope.tags = tagsGetter($scope);
-                function toBoolean(value) {
-                    if (value == null)
-                        return false;
-                    if (!value)
-                        return false;
-                    value = value.toString().toLowerCase();
-                    return value == '1' || value == 'true';
-                }
-                if (toBoolean($attrs.pipRebind)) {
-                    $scope.$watch(tagsGetter, function () {
-                        $scope.tags = tagsGetter($scope);
-                    });
-                }
-                $element.addClass('pip-tag-list');
-            }]
+            controller: TagListController,
+            controllerAs: '$ctrl'
         };
-    }]);
+    }
+    angular.module('pipTagList', ['pipList.Translate'])
+        .directive('pipTagList', TagList);
 })();
 },{}],4:[function(require,module,exports){
 (function(module) {
@@ -62,7 +70,19 @@ try {
 }
 module.run(['$templateCache', function($templateCache) {
   $templateCache.put('tag_list/tag_list.html',
-    '<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + pipType + \'-chips\'}}" ng-if="pipType && !pipTypeLocal"><span>{{pipType.toUpperCase() | translate | uppercase}}</span></div><div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + pipType + \'-chips\'}}" ng-if="pipType && pipTypeLocal"><span>{{pipTypeLocal.toUpperCase() | translate | uppercase}}</span></div><div class="pip-chip rm4" ng-repeat="tag in pipTags"><span>{{::tag}}</span></div>');
+    '<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + $ctrl.type + \'-chips\'}}"\n' +
+    '     ng-if="$ctrl.type && !$ctrl.typeLocal">\n' +
+    '\n' +
+    '    <span>{{$ctrl.type.toUpperCase() | translate | uppercase}}</span>\n' +
+    '</div>\n' +
+    '<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + $ctrl.type + \'-chips\'}}"\n' +
+    '     ng-if="$ctrl.type && $ctrl.typeLocal">\n' +
+    '\n' +
+    '    <span>{{$ctrl.typeLocal.toUpperCase() | translate | uppercase}}</span>\n' +
+    '</div>\n' +
+    '<div class="pip-chip rm4" ng-repeat="tag in $ctrl.tags">\n' +
+    '    <span>{{::tag}}</span>\n' +
+    '</div>');
 }]);
 })();
 

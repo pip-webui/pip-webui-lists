@@ -22,9 +22,9 @@ module.exports = {
         ]
     },
     samples: {
-        port: 8140
+        port: 8145
     },
     api: {
-        port: 8141
+        port: 8146
     }
 };

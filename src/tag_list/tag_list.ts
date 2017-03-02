@@ -1,59 +1,67 @@
 /**
  * @file Tag list control
  * @copyright Digital Living Software Corp. 2014-2015
- * @todo
- * - Improve samples in sampler app
- * - What's pipType and pipTypeLocal? Give better name
- * - Do not use ng-if, instead generate template statically
  */
 
-(function () {
+ class TagListController {
+    private _rebind: string;
+
+    public tags: any[];
+    public type: string;
+    public typeLocal: string;
+
+    constructor(
+         $scope: ng.IScope, 
+         $element: ng.IRootElementService
+    ) {
+
+        // Set tags
+        this.tags = $scope['pipTags'];
+        this.type = $scope['pipType'];
+        this.typeLocal = $scope['pipTypeLocal'];
+        this._rebind = $scope['pipRebind'];
+      
+        if (this.toBoolean(this._rebind)) {
+            $scope.$watch('pipTags', () => {
+                this.tags = $scope['pipTags'];
+            });
+        }
+
+        $element.css('display', 'block');
+        $element.addClass('pip-tag-list');
+     }
+
+     private toBoolean(value: string): boolean {
+        if (_.isNull(value) || _.isUndefined(value)) return false;
+        if (!value) return false;
+        value = value.toString().toLowerCase();
+        return value == '1' || value == 'true';
+     }
+ }
+
+(() => {
     'use strict';
 
-    var thisModule = angular.module('pipTagList', ['pipList.Translate']);
-
-    /**
+     /**
      * pipTags - set of tags
      * pipType - additional type tag
      * pipTypeLocal - additional translated type tag
      */
-    thisModule.directive('pipTagList',
-        function ($parse) {
-            return {
-                restrict: 'EA',
-                scope: {
-                    pipTags: '=',
-                    pipType: '=',
-                    pipTypeLocal: '='
-                },
-                templateUrl: 'tag_list/tag_list.html',
-                controller: function ($scope, $element, $attrs) {
-                    var tagsGetter;
+     function TagList ($parse) {
+        return {
+            restrict: 'E',
+            scope: {
+                pipTags: '=',
+                pipType: '=',
+                pipTypeLocal: '='
+            },
+            templateUrl: 'tag_list/tag_list.html',
+            controller: TagListController,
+            controllerAs: '$ctrl'
+        };
+     }
 
-                    tagsGetter = $parse($attrs.pipTags);
-                    $element.css('display', 'block');
-                    // Set tags
-                    $scope.tags = tagsGetter($scope);
-
-                    function toBoolean(value) {
-                        if (value == null) return false;
-                        if (!value) return false;
-                        value = value.toString().toLowerCase();
-                        return value == '1' || value == 'true';
-                    }
-
-                    // Also optimization to avoid watch if it is unnecessary
-                    if (toBoolean($attrs.pipRebind)) {
-                        $scope.$watch(tagsGetter, function () {
-                            $scope.tags = tagsGetter($scope);
-                        });
-                    }
-
-                    // Add class
-                    $element.addClass('pip-tag-list');
-                }
-            };
-        }
-    );
+    angular.module('pipTagList', ['pipList.Translate'])
+        .directive('pipTagList', TagList)
 
 })();
