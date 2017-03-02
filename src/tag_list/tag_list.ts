@@ -2,11 +2,16 @@
  * @file Tag list control
  * @copyright Digital Living Software Corp. 2014-2015
  */
+interface ITagList {
+    tags: string[];
+    type: string;
+    typeLocal: string;
+}
 
- class TagListController {
+class TagListController implements ITagList {
     private _rebind: string;
 
-    public tags: any[];
+    public tags: string[];
     public type: string;
     public typeLocal: string;
 

@@ -1,9 +1,14 @@
 declare module pip.lists {
 
 
-class TagListController {
+interface ITagList {
+    tags: string[];
+    type: string;
+    typeLocal: string;
+}
+class TagListController implements ITagList {
     private _rebind;
-    tags: any[];
+    tags: string[];
     type: string;
     typeLocal: string;
     constructor($scope: ng.IScope, $element: ng.IRootElementService);
