@@ -1,21 +1,19 @@
-// @file Composition of control styles
-// @copyright Digital Living Software Corp. 2014-2015
+// $file Composition of control styles
+// $copyright Digital Living Software Corp. 2014-2015
 
 .pip-check-list {
   overflow-x: hidden;
   .pip-check-list-item {
-
     min-height: 72px;
     padding-right: 0px;
-
 
     .md-list-item-inner {
       padding-left: 0px;
       content: none;
-      //border-left: 5px solid @color-content;
+      //border-left: 5px solid $color-content;
       padding-right: 0px;
       display: block;
-      width: ~"calc(100% - 21px)";
+      width: calc(100% - 21px);
 
       .md-ripple-container {
         display: none;
@@ -25,7 +23,7 @@
     }
 
     .pip-checkbox, .pip-icon  {
-      .flex-fixed();
+      @include flex-fixed();
       width: 24px;
       margin-left: 3px;
       margin-right: 29px;
@@ -34,14 +32,12 @@
     }
 
     .pip-icon {
-
       margin-top: 16px;
     }
 
-
     .pip-content {
-      .text-overflow();
-      .flex-var();
+      @include text-overflow();
+      @include flex-var();
       padding-right: 24px;
       padding-top: 8px;
       padding-bottom: 13px;
@@ -53,25 +49,25 @@
       }
 
       .pip-title {
-        .text-overflow();
-        .flex-var();
-        font: @font-subhead2;
+        @include text-overflow();
+        @include flex-var();
+        font: $font-subhead2;
       }
 
       .pip-text-bold {
-        .flex-var();
-        font: @font-body2;
+        @include flex-var();
+        font: $font-body2;
         margin: 2px 0;
-        .text-overflow();
+        @include text-overflow();
       }
 
       .pip-text {
-        font: @font-body1;
+        font: $font-body1;
         max-height: 1.5em;
         line-height: 1.5em;
         margin-right: 16px;
-        color: @color-secondary;
-        .text-overflow();
+        color: $color-secondary;
+        @include text-overflow();
       }
     }
 

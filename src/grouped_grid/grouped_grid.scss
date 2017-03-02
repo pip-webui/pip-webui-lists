@@ -38,39 +38,39 @@
   }
   
 
-  @color-0:                #ef5350;
-  @color-1:                #ec407a;
-  @color-2:                #ab47bc;
-  @color-3:                #7e57c2;
-  @color-4:                #5c6bc0;
-  @color-5:                #03a9f4;
-  @color-6:                #00bcd4;
-  @color-7:                #009688;
-  @color-8:                #4caf50;
-  @color-9:                #8bc34a;
-  @color-10:               #cddc39;
-  @color-11:               #ffc107;
-  @color-12:               #ff9800;
-  @color-13:               #ff5722;
-  @color-14:               #795548;
-  @color-15:               #607d8b;
+  $color-0:                #ef5350;
+  $color-1:                #ec407a;
+  $color-2:                #ab47bc;
+  $color-3:                #7e57c2;
+  $color-4:                #5c6bc0;
+  $color-5:                #03a9f4;
+  $color-6:                #00bcd4;
+  $color-7:                #009688;
+  $color-8:                #4caf50;
+  $color-9:                #8bc34a;
+  $color-10:               #cddc39;
+  $color-11:               #ffc107;
+  $color-12:               #ff9800;
+  $color-13:               #ff5722;
+  $color-14:               #795548;
+  $color-15:               #607d8b;
 
-  .bg-color-0 { background-color: @color-0; }
-  .bg-color-1 { background-color: @color-1; }
-  .bg-color-2 { background-color: @color-2; }
-  .bg-color-3 { background-color: @color-3; }
-  .bg-color-4 { background-color: @color-4; }
-  .bg-color-5 { background-color: @color-5; }
-  .bg-color-6 { background-color: @color-6; }
-  .bg-color-7 { background-color: @color-7; }
-  .bg-color-8 { background-color: @color-8; }
-  .bg-color-9 { background-color: @color-9; }
-  .bg-color-10 { background-color: @color-10; }
-  .bg-color-11 { background-color: @color-11; }
-  .bg-color-12 { background-color: @color-12; }
-  .bg-color-13 { background-color: @color-13; }
-  .bg-color-14 { background-color: @color-14; }
-  .bg-color-15 { background-color: @color-15; }
+  .bg-color-0 { background-color: $color-0; }
+  .bg-color-1 { background-color: $color-1; }
+  .bg-color-2 { background-color: $color-2; }
+  .bg-color-3 { background-color: $color-3; }
+  .bg-color-4 { background-color: $color-4; }
+  .bg-color-5 { background-color: $color-5; }
+  .bg-color-6 { background-color: $color-6; }
+  .bg-color-7 { background-color: $color-7; }
+  .bg-color-8 { background-color: $color-8; }
+  .bg-color-9 { background-color: $color-9; }
+  .bg-color-10 { background-color: $color-10; }
+  .bg-color-11 { background-color: $color-11; }
+  .bg-color-12 { background-color: $color-12; }
+  .bg-color-13 { background-color: $color-13; }
+  .bg-color-14 { background-color: $color-14; }
+  .bg-color-15 { background-color: $color-15; }
 
 }
 
@@ -89,7 +89,7 @@
 
   .pip-title-group {
     font-size: 24px;
-    color: @color-secondary;
+    color: $color-secondary;
   }
 
   &.grouped-grid-xs {
@@ -105,15 +105,15 @@
     padding: 0 12px;
   }
   .pip-tile-xs {
-    width: ~"calc(100% - 8px)";
+    width: calc(100% - 8px);
     height: 48px;
-    .flex();
-    .flex-direction(row);
+    @include flex();
+    @include flex-direction(row);
 
     .pip-text {
       margin-top: 16px;
       margin-bottom: 16px; 
-      .flex();
+      @include flex();
     }
 
     .pip-grid-icon {
