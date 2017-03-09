@@ -10,11 +10,13 @@
         };
     }]);
 })();
+
 },{}],2:[function(require,module,exports){
 (function () {
     'use strict';
     angular.module('pipLists', ['pipTagList']);
 })();
+
 },{}],3:[function(require,module,exports){
 var TagListController = (function () {
     TagListController.$inject = ['$scope', '$element'];
@@ -61,6 +63,7 @@ var TagListController = (function () {
     angular.module('pipTagList', ['pipList.Translate'])
         .directive('pipTagList', TagList);
 })();
+
 },{}],4:[function(require,module,exports){
 (function(module) {
 try {
@@ -70,19 +73,7 @@ try {
 }
 module.run(['$templateCache', function($templateCache) {
   $templateCache.put('tag_list/tag_list.html',
-    '<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + $ctrl.type + \'-chips\'}}"\n' +
-    '     ng-if="$ctrl.type && !$ctrl.typeLocal">\n' +
-    '\n' +
-    '    <span>{{$ctrl.type.toUpperCase() | translate | uppercase}}</span>\n' +
-    '</div>\n' +
-    '<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + $ctrl.type + \'-chips\'}}"\n' +
-    '     ng-if="$ctrl.type && $ctrl.typeLocal">\n' +
-    '\n' +
-    '    <span>{{$ctrl.typeLocal.toUpperCase() | translate | uppercase}}</span>\n' +
-    '</div>\n' +
-    '<div class="pip-chip rm4" ng-repeat="tag in $ctrl.tags">\n' +
-    '    <span>{{::tag}}</span>\n' +
-    '</div>');
+    '<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + $ctrl.type + \'-chips\'}}" ng-if="$ctrl.type && !$ctrl.typeLocal"><span>{{$ctrl.type.toUpperCase() | translate | uppercase}}</span></div><div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + $ctrl.type + \'-chips\'}}" ng-if="$ctrl.type && $ctrl.typeLocal"><span>{{$ctrl.typeLocal.toUpperCase() | translate | uppercase}}</span></div><div class="pip-chip rm4" ng-repeat="tag in $ctrl.tags"><span>{{::tag}}</span></div>');
 }]);
 })();
 

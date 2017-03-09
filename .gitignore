@@ -4,4 +4,5 @@
 /temp
 /lib
 /obj
+/debug.log
 build.secret.js
