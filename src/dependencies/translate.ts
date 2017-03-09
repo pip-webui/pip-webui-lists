@@ -7,5 +7,6 @@ function translate($injector) {
     }
 }
 
-angular.module('pipList.Translate', [])
+angular
+    .module('pipList.Translate', [])
     .filter('translate', translate);

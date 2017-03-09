@@ -7,7 +7,8 @@ function translate($injector) {
         return pipTranslate ? pipTranslate.translate(key) || key : key;
     };
 }
-angular.module('pipList.Translate', [])
+angular
+    .module('pipList.Translate', [])
     .filter('translate', translate);
 
 },{}],2:[function(require,module,exports){
