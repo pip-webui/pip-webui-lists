@@ -1,7 +1,3 @@
-/**
- * @file Tag list control
- * @copyright Digital Living Software Corp. 2014-2015
- */
 interface ITagList {
     tags: string[];
     type: string;
@@ -44,29 +40,24 @@ class TagListController implements ITagList {
      }
  }
 
-(() => {
-    'use strict';
+/**
+ * pipTags - set of tags
+ * pipType - additional type tag
+ * pipTypeLocal - additional translated type tag
+ */
+function TagList ($parse) {
+    return {
+        restrict: 'E',
+        scope: {
+            pipTags: '=',
+            pipType: '=',
+            pipTypeLocal: '='
+        },
+        templateUrl: 'tag_list/tag_list.html',
+        controller: TagListController,
+        controllerAs: '$ctrl'
+    };
+    }
 
-     /**
-     * pipTags - set of tags
-     * pipType - additional type tag
-     * pipTypeLocal - additional translated type tag
-     */
-     function TagList ($parse) {
-        return {
-            restrict: 'E',
-            scope: {
-                pipTags: '=',
-                pipType: '=',
-                pipTypeLocal: '='
-            },
-            templateUrl: 'tag_list/tag_list.html',
-            controller: TagListController,
-            controllerAs: '$ctrl'
-        };
-     }
-
-    angular.module('pipTagList', ['pipList.Translate'])
-        .directive('pipTagList', TagList)
-
-})();
+angular.module('pipTagList', ['pipList.Translate'])
+    .directive('pipTagList', TagList)

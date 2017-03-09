@@ -1,23 +1,23 @@
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}(g.pip || (g.pip = {})).lists = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-(function () {
-    'use strict';
-    var thisModule = angular.module('pipList.Translate', []);
-    thisModule.filter('translate', ['$injector', function ($injector) {
-        var pipTranslate = $injector.has('pipTranslate')
-            ? $injector.get('pipTranslate') : null;
-        return function (key) {
-            return pipTranslate ? pipTranslate.translate(key) || key : key;
-        };
-    }]);
-})();
+translate.$inject = ['$injector'];
+function translate($injector) {
+    var pipTranslate = $injector.has('pipTranslate')
+        ? $injector.get('pipTranslate') : null;
+    return function (key) {
+        return pipTranslate ? pipTranslate.translate(key) || key : key;
+    };
+}
+angular.module('pipList.Translate', [])
+    .filter('translate', translate);
 
 },{}],2:[function(require,module,exports){
-(function () {
-    'use strict';
-    angular.module('pipLists', ['pipTagList']);
-})();
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+require("./dependencies/translate");
+angular.module('pipLists', ['pipTagList']);
 
-},{}],3:[function(require,module,exports){
+},{"./dependencies/translate":1}],3:[function(require,module,exports){
+TagList.$inject = ['$parse'];
 var TagListController = (function () {
     TagListController.$inject = ['$scope', '$element'];
     function TagListController($scope, $element) {
@@ -44,25 +44,21 @@ var TagListController = (function () {
     };
     return TagListController;
 }());
-(function () {
-    'use strict';
-    TagList.$inject = ['$parse'];
-    function TagList($parse) {
-        return {
-            restrict: 'E',
-            scope: {
-                pipTags: '=',
-                pipType: '=',
-                pipTypeLocal: '='
-            },
-            templateUrl: 'tag_list/tag_list.html',
-            controller: TagListController,
-            controllerAs: '$ctrl'
-        };
-    }
-    angular.module('pipTagList', ['pipList.Translate'])
-        .directive('pipTagList', TagList);
-})();
+function TagList($parse) {
+    return {
+        restrict: 'E',
+        scope: {
+            pipTags: '=',
+            pipType: '=',
+            pipTypeLocal: '='
+        },
+        templateUrl: 'tag_list/tag_list.html',
+        controller: TagListController,
+        controllerAs: '$ctrl'
+    };
+}
+angular.module('pipTagList', ['pipList.Translate'])
+    .directive('pipTagList', TagList);
 
 },{}],4:[function(require,module,exports){
 (function(module) {

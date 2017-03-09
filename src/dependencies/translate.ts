@@ -1,22 +1,11 @@
-/**
- * @file Optional filter to translate string resources
- * @copyright Digital Living Software Corp. 2014-2016
- */
- 
-/* global angular */
+function translate($injector) {
+    var pipTranslate = $injector.has('pipTranslate') 
+        ? $injector.get('pipTranslate') : null;
 
-(function () {
-    'use strict';
+    return function (key) {
+        return pipTranslate  ? pipTranslate.translate(key) || key : key;
+    }
+}
 
-    var thisModule = angular.module('pipList.Translate', []);
-
-    thisModule.filter('translate', function ($injector) {
-        var pipTranslate = $injector.has('pipTranslate') 
-            ? $injector.get('pipTranslate') : null;
-
-        return function (key) {
-            return pipTranslate  ? pipTranslate.translate(key) || key : key;
-        }
-    });
-
-})();
+angular.module('pipList.Translate', [])
+    .filter('translate', translate);
