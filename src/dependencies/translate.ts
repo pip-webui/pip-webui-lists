@@ -1,8 +1,10 @@
-function translate($injector) {
-    var pipTranslate = $injector.has('pipTranslate') 
+(() => {
+
+function translate($injector: angular.auto.IInjectorService) {
+    let pipTranslate: any = $injector.has('pipTranslate') 
         ? $injector.get('pipTranslate') : null;
 
-    return function (key) {
+    return (key: string) => {
         return pipTranslate  ? pipTranslate.translate(key) || key : key;
     }
 }
@@ -10,3 +12,5 @@ function translate($injector) {
 angular
     .module('pipList.Translate', [])
     .filter('translate', translate);
+
+})();

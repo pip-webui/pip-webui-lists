@@ -1,4 +1,5 @@
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}(g.pip || (g.pip = {})).lists = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+<<<<<<< HEAD
 translate.$inject = ['$injector'];
 function translate($injector) {
     var pipTranslate = $injector.has('pipTranslate')
@@ -11,56 +12,67 @@ angular
     .module('pipList.Translate', [])
     .filter('translate', translate);
 
+=======
+(function () {
+    'use strict';
+    filerTranslate.$inject = ['$injector'];
+    function filerTranslate($injector) {
+        var pipTranslate = $injector.has('pipTranslate')
+            ? $injector.get('pipTranslate') : null;
+        return function (key) {
+            return pipTranslate ? pipTranslate.translate(key) || key : key;
+        };
+    }
+    angular.module('pipList.Translate', [])
+        .filter('translate', filerTranslate);
+})();
+>>>>>>> 9a37eed0d326f682441cc6d15928e372e56139a0
 },{}],2:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 require("./dependencies/translate");
 angular.module('pipLists', ['pipTagList']);
-
 },{"./dependencies/translate":1}],3:[function(require,module,exports){
-TagList.$inject = ['$parse'];
-var TagListController = (function () {
-    TagListController.$inject = ['$scope', '$element'];
-    function TagListController($scope, $element) {
-        var _this = this;
-        this.tags = $scope['pipTags'];
-        this.type = $scope['pipType'];
-        this.typeLocal = $scope['pipTypeLocal'];
-        this._rebind = $scope['pipRebind'];
-        if (this.toBoolean(this._rebind)) {
-            $scope.$watch('pipTags', function () {
-                _this.tags = $scope['pipTags'];
-            });
+(function () {
+    var TagListController = (function () {
+        function TagListController($scope, $element) {
+            $element.css('display', 'block');
+            $element.addClass('pip-tag-list');
         }
-        $element.css('display', 'block');
-        $element.addClass('pip-tag-list');
-    }
-    TagListController.prototype.toBoolean = function (value) {
-        if (_.isNull(value) || _.isUndefined(value))
-            return false;
-        if (!value)
-            return false;
-        value = value.toString().toLowerCase();
-        return value == '1' || value == 'true';
+        TagListController.prototype.toBoolean = function (value) {
+            if (_.isNull(value) || _.isUndefined(value))
+                return false;
+            if (!value)
+                return false;
+            value = value.toString().toLowerCase();
+            return value == '1' || value == 'true';
+        };
+        TagListController.prototype.$onChanges = function (changes) {
+            if (this.rebind && changes.tags) {
+                this.tags = changes.tags.currentValue;
+            }
+        };
+        return TagListController;
+    }());
+    var TagListBindings = {
+        tags: '<pipTags',
+        type: '<pipType',
+        typeLocal: '<pipTypeLocal',
+        rebuid: '<pipRebind'
     };
-    return TagListController;
-}());
-function TagList($parse) {
-    return {
-        restrict: 'E',
-        scope: {
-            pipTags: '=',
-            pipType: '=',
-            pipTypeLocal: '='
-        },
+    var TagListChanges = (function () {
+        function TagListChanges() {
+        }
+        return TagListChanges;
+    }());
+    var TagList = {
+        bindings: TagListBindings,
         templateUrl: 'tag_list/tag_list.html',
-        controller: TagListController,
-        controllerAs: '$ctrl'
+        controller: TagListController
     };
-}
-angular.module('pipTagList', ['pipList.Translate'])
-    .directive('pipTagList', TagList);
-
+    angular.module('pipTagList', ['pipList.Translate'])
+        .component('pipTagList', TagList);
+})();
 },{}],4:[function(require,module,exports){
 (function(module) {
 try {
