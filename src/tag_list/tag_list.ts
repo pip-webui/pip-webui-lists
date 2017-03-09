@@ -5,7 +5,7 @@ interface ITagList {
 }
 
 class TagListController implements ITagList {
-    private _rebind: string;
+    public rebind: string;
 
     public tags: string[];
     public type: string;
@@ -17,17 +17,6 @@ class TagListController implements ITagList {
     ) {
 
         // Set tags
-        this.tags = $scope['pipTags'];
-        this.type = $scope['pipType'];
-        this.typeLocal = $scope['pipTypeLocal'];
-        this._rebind = $scope['pipRebind'];
-      
-        if (this.toBoolean(this._rebind)) {
-            $scope.$watch('pipTags', () => {
-                this.tags = $scope['pipTags'];
-            });
-        }
-
         $element.css('display', 'block');
         $element.addClass('pip-tag-list');
      }
@@ -38,26 +27,48 @@ class TagListController implements ITagList {
         value = value.toString().toLowerCase();
         return value == '1' || value == 'true';
      }
+
+    public $onChanges(changes: TagListChanges) {
+        if (this.rebind && changes.tags) {
+            this.tags = changes.tags.currentValue;
+        }
+
+    }
+
  }
 
-/**
- * pipTags - set of tags
- * pipType - additional type tag
- * pipTypeLocal - additional translated type tag
- */
-function TagList ($parse) {
-    return {
+export interface ITagListBindings {
+    [key: string]: any;
+
+    tags: any,
+    type: any,
+    typeLocal: any,
+    rebuid: any
+}
+
+const TagListBindings: ITagListBindings = {
+    tags: '<pipTags',
+    type: '<pipType',
+    typeLocal: '<pipTypeLocal',
+    rebuid: '<pipRebind'
+}
+
+export class TagListChanges implements ng.IOnChangesObject, ITagListBindings {
+    [key: string]: ng.IChangesObject<any>;
+    
+    tags: ng.IChangesObject<string[]>;
+    type: ng.IChangesObject<string>;
+    typeLocal: ng.IChangesObject<string>;
+    rebuid: ng.IChangesObject<boolean>
+}
+
+const TagList = {
         restrict: 'E',
-        scope: {
-            pipTags: '=',
-            pipType: '=',
-            pipTypeLocal: '='
-        },
+        bindings: TagListBindings,
         templateUrl: 'tag_list/tag_list.html',
         controller: TagListController,
         controllerAs: '$ctrl'
-    };
     }
 
 angular.module('pipTagList', ['pipList.Translate'])
-    .directive('pipTagList', TagList)
+    .component('pipTagList', TagList)

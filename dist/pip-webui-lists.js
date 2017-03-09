@@ -9,28 +9,16 @@ function translate($injector) {
 }
 angular.module('pipList.Translate', [])
     .filter('translate', translate);
-
 },{}],2:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 require("./dependencies/translate");
 angular.module('pipLists', ['pipTagList']);
-
 },{"./dependencies/translate":1}],3:[function(require,module,exports){
-TagList.$inject = ['$parse'];
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var TagListController = (function () {
-    TagListController.$inject = ['$scope', '$element'];
     function TagListController($scope, $element) {
-        var _this = this;
-        this.tags = $scope['pipTags'];
-        this.type = $scope['pipType'];
-        this.typeLocal = $scope['pipTypeLocal'];
-        this._rebind = $scope['pipRebind'];
-        if (this.toBoolean(this._rebind)) {
-            $scope.$watch('pipTags', function () {
-                _this.tags = $scope['pipTags'];
-            });
-        }
         $element.css('display', 'block');
         $element.addClass('pip-tag-list');
     }
@@ -42,24 +30,34 @@ var TagListController = (function () {
         value = value.toString().toLowerCase();
         return value == '1' || value == 'true';
     };
+    TagListController.prototype.$onChanges = function (changes) {
+        if (this.rebind && changes.tags) {
+            this.tags = changes.tags.currentValue;
+        }
+    };
     return TagListController;
 }());
-function TagList($parse) {
-    return {
-        restrict: 'E',
-        scope: {
-            pipTags: '=',
-            pipType: '=',
-            pipTypeLocal: '='
-        },
-        templateUrl: 'tag_list/tag_list.html',
-        controller: TagListController,
-        controllerAs: '$ctrl'
-    };
-}
+var TagListBindings = {
+    tags: '<pipTags',
+    type: '<pipType',
+    typeLocal: '<pipTypeLocal',
+    rebuid: '<pipRebind'
+};
+var TagListChanges = (function () {
+    function TagListChanges() {
+    }
+    return TagListChanges;
+}());
+exports.TagListChanges = TagListChanges;
+var TagList = {
+    restrict: 'E',
+    bindings: TagListBindings,
+    templateUrl: 'tag_list/tag_list.html',
+    controller: TagListController,
+    controllerAs: '$ctrl'
+};
 angular.module('pipTagList', ['pipList.Translate'])
-    .directive('pipTagList', TagList);
-
+    .component('pipTagList', TagList);
 },{}],4:[function(require,module,exports){
 (function(module) {
 try {
@@ -69,7 +67,19 @@ try {
 }
 module.run(['$templateCache', function($templateCache) {
   $templateCache.put('tag_list/tag_list.html',
-    '<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + $ctrl.type + \'-chips\'}}" ng-if="$ctrl.type && !$ctrl.typeLocal"><span>{{$ctrl.type.toUpperCase() | translate | uppercase}}</span></div><div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + $ctrl.type + \'-chips\'}}" ng-if="$ctrl.type && $ctrl.typeLocal"><span>{{$ctrl.typeLocal.toUpperCase() | translate | uppercase}}</span></div><div class="pip-chip rm4" ng-repeat="tag in $ctrl.tags"><span>{{::tag}}</span></div>');
+    '<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + $ctrl.type + \'-chips\'}}"\n' +
+    '     ng-if="$ctrl.type && !$ctrl.typeLocal">\n' +
+    '\n' +
+    '    <span>{{$ctrl.type.toUpperCase() | translate | uppercase}}</span>\n' +
+    '</div>\n' +
+    '<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + $ctrl.type + \'-chips\'}}"\n' +
+    '     ng-if="$ctrl.type && $ctrl.typeLocal">\n' +
+    '\n' +
+    '    <span>{{$ctrl.typeLocal.toUpperCase() | translate | uppercase}}</span>\n' +
+    '</div>\n' +
+    '<div class="pip-chip rm4" ng-repeat="tag in $ctrl.tags">\n' +
+    '    <span>{{::tag}}</span>\n' +
+    '</div>');
 }]);
 })();
 

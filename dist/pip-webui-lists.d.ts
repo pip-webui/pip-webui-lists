@@ -2,30 +2,20 @@ declare module pip.lists {
 
 function translate($injector: any): (key: any) => any;
 
-interface ITagList {
-    tags: string[];
-    type: string;
-    typeLocal: string;
+export interface ITagListBindings {
+    [key: string]: any;
+    tags: any;
+    type: any;
+    typeLocal: any;
+    rebuid: any;
 }
-class TagListController implements ITagList {
-    private _rebind;
-    tags: string[];
-    type: string;
-    typeLocal: string;
-    constructor($scope: ng.IScope, $element: ng.IRootElementService);
-    private toBoolean(value);
+export class TagListChanges implements ng.IOnChangesObject, ITagListBindings {
+    [key: string]: ng.IChangesObject<any>;
+    tags: ng.IChangesObject<string[]>;
+    type: ng.IChangesObject<string>;
+    typeLocal: ng.IChangesObject<string>;
+    rebuid: ng.IChangesObject<boolean>;
 }
-function TagList($parse: any): {
-    restrict: string;
-    scope: {
-        pipTags: string;
-        pipType: string;
-        pipTypeLocal: string;
-    };
-    templateUrl: string;
-    controller: typeof TagListController;
-    controllerAs: string;
-};
 
 }
 
