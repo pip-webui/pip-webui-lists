@@ -1,3 +1,5 @@
+
+(() => {
 interface ITagList {
     tags: string[];
     type: string;
@@ -37,7 +39,7 @@ class TagListController implements ITagList {
 
  }
 
-export interface ITagListBindings {
+interface ITagListBindings {
     [key: string]: any;
 
     tags: any,
@@ -53,7 +55,7 @@ const TagListBindings: ITagListBindings = {
     rebuid: '<pipRebind'
 }
 
-export class TagListChanges implements ng.IOnChangesObject, ITagListBindings {
+class TagListChanges implements ng.IOnChangesObject, ITagListBindings {
     [key: string]: ng.IChangesObject<any>;
     
     tags: ng.IChangesObject<string[]>;
@@ -72,3 +74,5 @@ const TagList = {
 
 angular.module('pipTagList', ['pipList.Translate'])
     .component('pipTagList', TagList)
+
+})();

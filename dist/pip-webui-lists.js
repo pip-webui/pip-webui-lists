@@ -18,49 +18,48 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("./dependencies/translate");
 angular.module('pipLists', ['pipTagList']);
 },{"./dependencies/translate":1}],3:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var TagListController = (function () {
-    function TagListController($scope, $element) {
-        $element.css('display', 'block');
-        $element.addClass('pip-tag-list');
-    }
-    TagListController.prototype.toBoolean = function (value) {
-        if (_.isNull(value) || _.isUndefined(value))
-            return false;
-        if (!value)
-            return false;
-        value = value.toString().toLowerCase();
-        return value == '1' || value == 'true';
-    };
-    TagListController.prototype.$onChanges = function (changes) {
-        if (this.rebind && changes.tags) {
-            this.tags = changes.tags.currentValue;
+(function () {
+    var TagListController = (function () {
+        function TagListController($scope, $element) {
+            $element.css('display', 'block');
+            $element.addClass('pip-tag-list');
         }
+        TagListController.prototype.toBoolean = function (value) {
+            if (_.isNull(value) || _.isUndefined(value))
+                return false;
+            if (!value)
+                return false;
+            value = value.toString().toLowerCase();
+            return value == '1' || value == 'true';
+        };
+        TagListController.prototype.$onChanges = function (changes) {
+            if (this.rebind && changes.tags) {
+                this.tags = changes.tags.currentValue;
+            }
+        };
+        return TagListController;
+    }());
+    var TagListBindings = {
+        tags: '<pipTags',
+        type: '<pipType',
+        typeLocal: '<pipTypeLocal',
+        rebuid: '<pipRebind'
     };
-    return TagListController;
-}());
-var TagListBindings = {
-    tags: '<pipTags',
-    type: '<pipType',
-    typeLocal: '<pipTypeLocal',
-    rebuid: '<pipRebind'
-};
-var TagListChanges = (function () {
-    function TagListChanges() {
-    }
-    return TagListChanges;
-}());
-exports.TagListChanges = TagListChanges;
-var TagList = {
-    restrict: 'E',
-    bindings: TagListBindings,
-    templateUrl: 'tag_list/tag_list.html',
-    controller: TagListController,
-    controllerAs: '$ctrl'
-};
-angular.module('pipTagList', ['pipList.Translate'])
-    .component('pipTagList', TagList);
+    var TagListChanges = (function () {
+        function TagListChanges() {
+        }
+        return TagListChanges;
+    }());
+    var TagList = {
+        restrict: 'E',
+        bindings: TagListBindings,
+        templateUrl: 'tag_list/tag_list.html',
+        controller: TagListController,
+        controllerAs: '$ctrl'
+    };
+    angular.module('pipTagList', ['pipList.Translate'])
+        .component('pipTagList', TagList);
+})();
 },{}],4:[function(require,module,exports){
 (function(module) {
 try {
