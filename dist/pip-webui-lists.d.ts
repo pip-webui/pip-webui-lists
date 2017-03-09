@@ -1,6 +1,5 @@
 declare module pip.lists {
 
-function translate($injector: any): (key: any) => any;
 
 export interface ITagListBindings {
     [key: string]: any;
