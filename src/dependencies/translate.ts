@@ -1,4 +1,4 @@
-(() => {
+{
 
     function translate($injector: angular.auto.IInjectorService) {
         let pipTranslate: any = $injector.has('pipTranslate')
@@ -13,4 +13,4 @@
         .module('pipList.Translate', [])
         .filter('translate', translate);
 
-})();
+}
