@@ -65,11 +65,12 @@
 
     const TagList = {
         bindings: TagListBindings,
-        templateUrl: 'tag_list/tag_list.html',
+        templateUrl: 'tag_list/TagList.html',
         controller: TagListController
     }
 
-    angular.module('pipTagList', ['pipList.Translate'])
+    angular
+        .module('pipTagList', ['pipList.Translate'])
         .component('pipTagList', TagList)
 
 }

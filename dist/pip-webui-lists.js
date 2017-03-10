@@ -16,10 +16,11 @@
 },{}],2:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("./dependencies/translate");
 angular.module('pipLists', ['pipTagList']);
+require("./dependencies/TranslateFilter");
+require("./tag_list/TagList");
 
-},{"./dependencies/translate":1}],3:[function(require,module,exports){
+},{"./dependencies/TranslateFilter":1,"./tag_list/TagList":3}],3:[function(require,module,exports){
 {
     var TagListController = (function () {
         function TagListController($scope, $element) {
@@ -54,10 +55,11 @@ angular.module('pipLists', ['pipTagList']);
     }());
     var TagList = {
         bindings: TagListBindings,
-        templateUrl: 'tag_list/tag_list.html',
+        templateUrl: 'tag_list/TagList.html',
         controller: TagListController
     };
-    angular.module('pipTagList', ['pipList.Translate'])
+    angular
+        .module('pipTagList', ['pipList.Translate'])
         .component('pipTagList', TagList);
 }
 
@@ -69,7 +71,7 @@ try {
   module = angular.module('pipLists.Templates', []);
 }
 module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('tag_list/tag_list.html',
+  $templateCache.put('tag_list/TagList.html',
     '<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + $ctrl.type + \'-chips\'}}" ng-if="$ctrl.type && !$ctrl.typeLocal"><span>{{$ctrl.type.toUpperCase() | translate | uppercase}}</span></div><div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + $ctrl.type + \'-chips\'}}" ng-if="$ctrl.type && $ctrl.typeLocal"><span>{{$ctrl.typeLocal.toUpperCase() | translate | uppercase}}</span></div><div class="pip-chip rm4" ng-repeat="tag in $ctrl.tags"><span>{{::tag}}</span></div>');
 }]);
 })();
