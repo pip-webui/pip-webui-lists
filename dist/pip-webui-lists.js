@@ -18,7 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("./dependencies/translate");
 angular.module('pipLists', ['pipTagList']);
 },{"./dependencies/translate":1}],3:[function(require,module,exports){
-(function () {
+{
     var TagListController = (function () {
         function TagListController($scope, $element) {
             $element.css('display', 'block');
@@ -57,7 +57,7 @@ angular.module('pipLists', ['pipTagList']);
     };
     angular.module('pipTagList', ['pipList.Translate'])
         .component('pipTagList', TagList);
-})();
+}
 },{}],4:[function(require,module,exports){
 (function(module) {
 try {

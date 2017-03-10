@@ -1,5 +1,4 @@
-
-(() => {
+{
     interface ITagList {
         tags: string[];
         type: string;
@@ -14,7 +13,7 @@
         public typeLocal: string;
 
         constructor(
-            $scope: ng.IScope, 
+            $scope: ng.IScope,
             $element: ng.IRootElementService
         ) {
 
@@ -57,7 +56,7 @@
 
     class TagListChanges implements ng.IOnChangesObject, ITagListBindings {
         [key: string]: ng.IChangesObject<any>;
-        
+
         tags: ng.IChangesObject<string[]>;
         type: ng.IChangesObject<string>;
         typeLocal: ng.IChangesObject<string>;
@@ -73,4 +72,4 @@
     angular.module('pipTagList', ['pipList.Translate'])
         .component('pipTagList', TagList)
 
-})();
+}

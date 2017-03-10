@@ -1,16 +1,16 @@
 (() => {
 
-function translate($injector: angular.auto.IInjectorService) {
-    let pipTranslate: any = $injector.has('pipTranslate') 
-        ? $injector.get('pipTranslate') : null;
+    function translate($injector: angular.auto.IInjectorService) {
+        let pipTranslate: any = $injector.has('pipTranslate')
+            ? $injector.get('pipTranslate') : null;
 
-    return (key: string) => {
-        return pipTranslate  ? pipTranslate.translate(key) || key : key;
+        return (key: string) => {
+            return pipTranslate ? pipTranslate.translate(key) || key : key;
+        }
     }
-}
 
-angular
-    .module('pipList.Translate', [])
-    .filter('translate', translate);
+    angular
+        .module('pipList.Translate', [])
+        .filter('translate', translate);
 
 })();
