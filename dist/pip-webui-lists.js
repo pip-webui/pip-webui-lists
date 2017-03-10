@@ -1,5 +1,5 @@
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}(g.pip || (g.pip = {})).lists = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-(function () {
+{
     translate.$inject = ['$injector'];
     function translate($injector) {
         var pipTranslate = $injector.has('pipTranslate')
@@ -11,12 +11,14 @@
     angular
         .module('pipList.Translate', [])
         .filter('translate', translate);
-})();
+}
+
 },{}],2:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 require("./dependencies/translate");
 angular.module('pipLists', ['pipTagList']);
+
 },{"./dependencies/translate":1}],3:[function(require,module,exports){
 {
     var TagListController = (function () {
@@ -58,6 +60,7 @@ angular.module('pipLists', ['pipTagList']);
     angular.module('pipTagList', ['pipList.Translate'])
         .component('pipTagList', TagList);
 }
+
 },{}],4:[function(require,module,exports){
 (function(module) {
 try {
@@ -67,19 +70,7 @@ try {
 }
 module.run(['$templateCache', function($templateCache) {
   $templateCache.put('tag_list/tag_list.html',
-    '<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + $ctrl.type + \'-chips\'}}"\n' +
-    '     ng-if="$ctrl.type && !$ctrl.typeLocal">\n' +
-    '\n' +
-    '    <span>{{$ctrl.type.toUpperCase() | translate | uppercase}}</span>\n' +
-    '</div>\n' +
-    '<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + $ctrl.type + \'-chips\'}}"\n' +
-    '     ng-if="$ctrl.type && $ctrl.typeLocal">\n' +
-    '\n' +
-    '    <span>{{$ctrl.typeLocal.toUpperCase() | translate | uppercase}}</span>\n' +
-    '</div>\n' +
-    '<div class="pip-chip rm4" ng-repeat="tag in $ctrl.tags">\n' +
-    '    <span>{{::tag}}</span>\n' +
-    '</div>');
+    '<div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + $ctrl.type + \'-chips\'}}" ng-if="$ctrl.type && !$ctrl.typeLocal"><span>{{$ctrl.type.toUpperCase() | translate | uppercase}}</span></div><div class="pip-chip rm4 pip-type-chip pip-type-chip-left {{\'bg-\' + $ctrl.type + \'-chips\'}}" ng-if="$ctrl.type && $ctrl.typeLocal"><span>{{$ctrl.typeLocal.toUpperCase() | translate | uppercase}}</span></div><div class="pip-chip rm4" ng-repeat="tag in $ctrl.tags"><span>{{::tag}}</span></div>');
 }]);
 })();
 
