@@ -12,14 +12,12 @@
         .module('pipList.Translate', [])
         .filter('translate', translate);
 }
-
 },{}],2:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 angular.module('pipLists', ['pipTagList']);
 require("./dependencies/TranslateFilter");
 require("./tag_list/TagList");
-
 },{"./dependencies/TranslateFilter":1,"./tag_list/TagList":3}],3:[function(require,module,exports){
 {
     var TagListController = (function () {
@@ -62,7 +60,6 @@ require("./tag_list/TagList");
         .module('pipTagList', ['pipList.Translate'])
         .component('pipTagList', TagList);
 }
-
 },{}],4:[function(require,module,exports){
 (function(module) {
 try {
